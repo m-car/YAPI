@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import yapilogo from "../../assets/images/yapi.png";
 import Auth from "../../utils/auth";
+import "./header.css"
 
 const Header = () => {
   const logout = (event) => {
