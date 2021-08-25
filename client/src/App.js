@@ -13,6 +13,7 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 
 import Selected from "./pages/Selected";
+import List from "./pages/List";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
@@ -56,10 +57,12 @@ function App() {
             <Route exact path="/signup">
               <Signup />
             </Route>
-            <Route exact path="/select">
-            <Selected />
+            <Route exact path="/selected/:apiId">
+              <Selected />
             </Route>
-           
+            <Route exact path="/list/:userSearch">
+              <List />
+            </Route>
           </div>
           <Footer />
         </div>
