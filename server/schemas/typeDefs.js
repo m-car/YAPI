@@ -14,6 +14,7 @@ const typeDefs = gql`
     name: String
     category: String
     description: String
+    url: String
     auth: String
     https: String
     cors: String
@@ -23,7 +24,7 @@ const typeDefs = gql`
     api: API
     username: String
     rating: Int
-    comment: 
+    comment: String
   }
   type Query {
     test: String

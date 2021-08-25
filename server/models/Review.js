@@ -2,7 +2,7 @@ const { Schema, model } = require("mongoose");
 
 const reviewSchema = new Schema({
   api: {
-    type: ObjectId,
+    type: Schema.Types.ObjectId,
     required: true,
   },
   username: {
