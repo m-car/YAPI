@@ -62,7 +62,7 @@ const ThoughtForm = () => {
 
   return (
     <div>
-      <h3>What's on your techy mind?</h3>
+      <h3>Leave a review</h3>
 
       {Auth.loggedIn() ? (
         <>
@@ -80,7 +80,7 @@ const ThoughtForm = () => {
             <div className="col-12 col-lg-9">
               <textarea
                 name="thoughtText"
-                placeholder="Here's a new thought..."
+                placeholder="Here's a new comment..."
                 value={thoughtText}
                 className="form-input w-100"
                 style={{ lineHeight: "1.5", resize: "vertical" }}
@@ -90,7 +90,7 @@ const ThoughtForm = () => {
 
             <div className="col-12 col-lg-3">
               <button className="btn btn-primary btn-block py-3" type="submit">
-                Add Thought
+                Add Review
               </button>
             </div>
             {error && (
@@ -102,7 +102,7 @@ const ThoughtForm = () => {
         </>
       ) : (
         <p>
-          You need to be logged in to share your thoughts. Please{" "}
+          You need to be logged in to leave a review. Please{" "}
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
       )}

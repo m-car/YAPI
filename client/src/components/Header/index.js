@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import yapilogo from "../../assets/images/yapi.png";
 import Auth from "../../utils/auth";
 
 const Header = () => {
@@ -13,9 +13,11 @@ const Header = () => {
       <div className="container flex-row justify-space-between-lg justify-center align-center">
         <div>
           <Link className="text-light" to="/">
-            <h1 className="m-0">Tech Thoughts</h1>
+            <h1 className="m-0">Your API </h1>
+            <img className="yapilogo" src={yapilogo} alt="yapi logo"></img>
           </Link>
-          <p className="m-0">Get into the mind of a programmer.</p>
+          <p className="m-0">Finish your project with your favorite public API's</p>
+          
         </div>
         <div>
           {Auth.loggedIn() ? (
