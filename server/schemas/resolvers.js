@@ -1,9 +1,13 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Thought } = require("../models");
+const { User, API } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
+    search: async (parent, {input}) =>{
+      const regex = new RegExp(`${input}`, "i")
+      return API.find({$or:[{name: regex}, {category: regex}]})
+    },
     test: () =>{
       return "it works"
     }

@@ -28,6 +28,7 @@ const typeDefs = gql`
   }
   type Query {
     test: String
+    search: [API]
   }
   type Auth {
     token: ID!
