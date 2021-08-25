@@ -1,10 +1,37 @@
-import React from "react";
+import React ,{ useState }from "react";
 import { useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
-
+import { useMutation } from "@apollo/client";
+import { ADD_COMMENT } from "../utils/mutations";
 
 
 const Selected = () => {
+    const [formState, setFormState] = useState({
+        username: "",
+        comment: "",
+      
+      });
+      const [addComment, { error, data }] = useMutation(ADD_COMMENT);
+      
+      const handleChange = (event) => {
+        const { name, value } = event.target;
+    
+        setFormState({
+          ...formState,
+          [name]: value,
+        });
+    };
+        const handleFormSubmit = async (event) => {
+            event.preventDefault();
+            console.log(formState);
+        
+            try {
+            
+            } catch (e) {
+              console.error(e);
+            }
+          };
+
     return (
        <main className ="flex-row justify-center  mb-4">
            <div className="col-12 col-lg-10">
@@ -19,10 +46,54 @@ const Selected = () => {
                        </p>
                    </div>
                </div>
-               {/* review list */}
+                {/* =================================================================================== */}
+               {/* Review box */}
+               <div className="card">
+          <h4 className="card-header bg-dark text-light p-2">Enter a Review</h4>
+          <div className="card-body">
+           
+              <form onSubmit={handleFormSubmit}>
+                <input
+                  className="form-input"
+                  placeholder="Your username"
+                  name="username"
+                  type="text"
+                  value={formState.name}
+                  onChange={handleChange}
+                />
+                <h4>(add stars widget here)</h4>
+                <input
+                  className="form-input"
+                  placeholder="Your Comment"
+                  name="Comment"
+                  type="text"
+                  value={formState.comment}
+                  onChange={handleChange}
+                />
+              
+                <button
+                  className="btn btn-block btn-primary"
+                  style={{ cursor: "pointer" }}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </form>
+            
+
+            {error && (
+              <div className="my-3 p-3 bg-danger text-white">
+                {error.message}
+              </div>
+            )}
+          </div>
+        </div>
+                
+                {/* ============================================================================= */}
+               {/* Reviews list */}
                <div className="card">
                    <h1 className="card-header bg-dark text-light p-2">Reviews</h1>
-                   {/* user 1 review */}
+                   {/* User 1 review */}
                    <div className="card-body">
                        <h2>My Mom</h2><p>* * * * * * * </p>
                        <p>
@@ -48,6 +119,7 @@ const Selected = () => {
        </main>
     )
 
-};
+
+}
 
 export default Selected;
