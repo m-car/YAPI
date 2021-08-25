@@ -57,6 +57,13 @@ function App() {
             <Route exact path="/signup">
               <Signup />
             </Route>
+            {/* this route is temporary */}
+            <Route exact path="/select">
+              <Selected />
+            </Route>
+            {/*  */}
+
+            
             <Route exact path="/selected/:apiId">
               <Selected />
             </Route>

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./index.css";
 import yapilogo from "../../assets/images/yapi-logo.png";
 import Auth from "../../utils/auth";
+import "./header.css"
 
 const Header = () => {
   const logout = (event) => {

@@ -7,7 +7,7 @@ import { useQuery } from "@apollo/client";
 const Home = () => {
 
 return (
-  <h1>hello</h1>
+  <h1>hello HOME PAGE</h1>
 )
 
   
