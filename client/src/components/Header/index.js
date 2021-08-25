@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./index.css";
 import yapilogo from "../../assets/images/yapi-logo.png";
 import Auth from "../../utils/auth";
 
