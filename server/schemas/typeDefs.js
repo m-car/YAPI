@@ -6,6 +6,24 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
+    favorites: [API]
+  }
+
+  type API {
+    _id: ID
+    name: String
+    category: String
+    description: String
+    auth: String
+    https: String
+    cors: String
+  }
+  type Review {
+    _id: ID
+    api: API
+    username: String
+    rating: Int
+    comment: 
   }
   type Query {
     test: String

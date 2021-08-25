@@ -18,8 +18,19 @@ const userSchema = new Schema({
     type: String,
     required: true,
     minlength: 5,
-  }
+  },
+  favorites: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "API",
+      validate: [arrayLimit, "Favorites exceed limit"],
+    },
+  ],
 });
+
+function arrayLimit(val) {
+  return val.length <= 10;
+}
 
 userSchema.pre("save", async function (next) {
   if (this.isNew || this.isModified("password")) {
