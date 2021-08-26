@@ -12,6 +12,15 @@ const resolvers = {
       return API.find({ category: "Animals" });
     },
     getApi: async (parent, { id }) => {
+      // API.aggregate([
+      //   {
+      //     $addFields: {
+      //       rating: {
+      //         $avg: "$reviews.rating",
+      //       },
+      //     },
+      //   },
+      // ]);
       return API.findById(id).populate("reviews");
     },
   },
