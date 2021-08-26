@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, API } = require("../models");
+const { User, API, Review } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
@@ -10,6 +10,9 @@ const resolvers = {
     },
     test: () => {
       return API.find({ category: "Animals" });
+    },
+    getApi: async (parent, { id }) => {
+      return API.findById(id).populate("reviews");
     },
   },
 
@@ -35,6 +38,10 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
+    },
+    addReview: async (parent, { api, username, comment, rating }) => {
+      const newReview = await Review.create({ api, username, rating, comment });
+      return newReview;
     },
   },
 };
