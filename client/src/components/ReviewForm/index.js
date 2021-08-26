@@ -6,7 +6,7 @@ import { ADD_COMMENT } from "../../utils/mutations";
 
 import Auth from "../../utils/auth";
 
-const CommentForm = ({ thoughtId }) => {
+const ReviewForm = ({ ReviewId }) => {
   const [commentText, setCommentText] = useState("");
   const [characterCount, setCharacterCount] = useState(0);
 
@@ -18,7 +18,7 @@ const CommentForm = ({ thoughtId }) => {
     try {
       const { data } = await addComment({
         variables: {
-          thoughtId,
+          ReviewId,
           commentText,
           commentAuthor: Auth.getProfile().data.username,
         },
@@ -41,7 +41,7 @@ const CommentForm = ({ thoughtId }) => {
 
   return (
     <div>
-      <h4>What are your thoughts on this thought?</h4>
+      <h4>What are your thoughts on this API?</h4>
 
       {Auth.loggedIn() ? (
         <>
@@ -85,4 +85,4 @@ const CommentForm = ({ thoughtId }) => {
   );
 };
 
-export default CommentForm;
+export default ReviewForm;
