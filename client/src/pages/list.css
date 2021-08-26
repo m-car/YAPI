@@ -1,0 +1,50 @@
+.searchResult {
+  background-color: lemonchiffon;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.authTag {
+  background-color: purple;
+  text-shadow: 1px 1px black;
+  padding: 1px 2px;
+  border-radius: 3px;
+  color: white;
+  margin-left: 5px;
+}
+.httpsTag {
+  background-color: green;
+  text-shadow: 1px 1px black;
+  padding: 1px 2px;
+  border-radius: 3px;
+  color: white;
+  margin-left: 5px;
+}
+.corsTag {
+  background-color: blue;
+  text-shadow: 1px 1px black;
+  padding: 1px 2px;
+  border-radius: 3px;
+  color: white;
+  margin-left: 5px;
+}
+
+@media screen and (min-width: 576px) {
+  .resContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .searchResult {
+    flex: 1 0 45%;
+    margin: 10px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .searchResult {
+    flex: 1 0 30%;
+  }
+}
