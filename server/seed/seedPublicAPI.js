@@ -2,7 +2,8 @@ const { Remarkable } = require("remarkable");
 const fetch = require("node-fetch");
 const cheerio = require("cheerio");
 const db = require("../config/connection");
-const { API } = require("../models");
+const { API, Review } = require("../models");
+const reviewData = require("./reviews.json");
 
 const createEntryFromRowEl = (row) => {
   const tds = row.children();
@@ -48,9 +49,12 @@ const fetchApiCollection = async () => {
 };
 
 db.once("open", async () => {
+  await db.dropDatabase();
   const apiData = await fetchApiCollection();
   await API.deleteMany({});
   await API.create(apiData);
+  const api = await API.findOne({ title: "Cataas" });
+  await Review.create(reviewData.map((rev) => ({ ...rev, api: api._id })));
 
   console.log("all done!");
   process.exit(0);
