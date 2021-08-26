@@ -9,7 +9,7 @@ import { useParams } from "react-router-dom";
 const List = () => {
   const { userSearch } = useParams();
   console.log(userSearch);
-  const { data, loading, error } = useQuery(QUERY_SEARCH, {
+  const { data } = useQuery(QUERY_SEARCH, {
     variables: { input: userSearch },
   });
 
