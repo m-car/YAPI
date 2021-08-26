@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
+import "./login.css";
 
 import Auth from "../utils/auth";
 
@@ -42,9 +43,9 @@ const Login = (props) => {
 
   return (
     <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Login</h4>
+      <div className="col-12 col-md-10 col-lg-7 customContainer">
+        <div className="formContainer">
+          <h4 className="card-header p-2 head">Login</h4>
           <div className="card-body">
             {data ? (
               <p>
@@ -54,21 +55,25 @@ const Login = (props) => {
             ) : (
               <form onSubmit={handleFormSubmit}>
                 <input
-                  className="form-input"
-                  placeholder="Your email"
+                  className="userInput userEmail"
                   name="email"
                   type="email"
                   value={formState.email}
                   onChange={handleChange}
                 />
+                <label for="email" className="emailLabel">
+                  Email
+                </label>
                 <input
-                  className="form-input"
-                  placeholder="******"
+                  className="userInput userPassword"
                   name="password"
                   type="password"
                   value={formState.password}
                   onChange={handleChange}
                 />
+                <label for="password" className="passwordLabel">
+                  Password
+                </label>
                 <button
                   className="btn btn-block btn-primary"
                   style={{ cursor: "pointer" }}
