@@ -17,9 +17,6 @@ const Header = () => {
           <Link className="text-light" to="/">
             <img className="yapilogo" src={yapilogo} alt="yapi logo"></img>
           </Link>
-          <p className="m-0">
-            Finish your project with your favorite public API's
-          </p>
         </div>
         <div>
           {Auth.loggedIn() ? (

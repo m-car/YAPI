@@ -1,5 +1,6 @@
 import React from "react";
 import { FaSearch } from "react-icons/fa";
+import hero from "../../assets/images/yapi-logo.png";
 import "./home.css";
 import { useQuery } from "@apollo/client";
 
