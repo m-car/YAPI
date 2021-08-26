@@ -11,7 +11,7 @@ const typeDefs = gql`
 
   type API {
     _id: ID
-    name: String
+    title: String
     category: String
     description: String
     url: String
@@ -27,7 +27,7 @@ const typeDefs = gql`
     comment: String
   }
   type Query {
-    test: String
+    test: [API]
     search: [API]
   }
   type Auth {

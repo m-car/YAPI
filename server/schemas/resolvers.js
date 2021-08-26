@@ -4,13 +4,13 @@ const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
-    search: async (parent, {input}) =>{
-      const regex = new RegExp(`${input}`, "i")
-      return API.find({$or:[{name: regex}, {category: regex}]})
+    search: async (parent, { input }) => {
+      const regex = new RegExp(`${input}`, "i");
+      return API.find({ $or: [{ title: regex }, { category: regex }] });
     },
-    test: () =>{
-      return "it works"
-    }
+    test: () => {
+      return API.find({ category: "Animals" });
+    },
   },
 
   Mutation: {

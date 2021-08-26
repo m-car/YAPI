@@ -7,7 +7,6 @@ const apiSchema = new Schema({
   url: String,
   auth: {
     type: String,
-    enum: ["No", "apiKey", "OAuth"],
   },
   https: {
     type: String,

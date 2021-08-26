@@ -1,6 +1,8 @@
 const { Remarkable } = require("remarkable");
 const fetch = require("node-fetch");
 const cheerio = require("cheerio");
+const db = require("../config/connection");
+const { API } = require("../models");
 
 const createEntryFromRowEl = (row) => {
   const tds = row.children();
@@ -45,9 +47,11 @@ const fetchApiCollection = async () => {
   }
 };
 
-async function seed() {
+db.once("open", async () => {
   const apiData = await fetchApiCollection();
-  console.log(apiCollection);
-}
+  await API.deleteMany({});
+  await API.create(apiData);
 
-seed();
+  console.log("all done!");
+  process.exit(0);
+});
