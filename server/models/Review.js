@@ -3,6 +3,7 @@ const { Schema, model } = require("mongoose");
 const reviewSchema = new Schema({
   api: {
     type: Schema.Types.ObjectId,
+    ref: "API",
     required: true,
   },
   username: {
@@ -11,6 +12,10 @@ const reviewSchema = new Schema({
   },
   rating: Number,
   comment: String,
+  date: {
+    type: Number,
+    default: Date.now,
+  },
 });
 
 const Review = model("Review", reviewSchema);
