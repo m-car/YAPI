@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./index.css";
+import { FaSearch } from "react-icons/fa";
+import hero from "../../assets/images/hero.jpg";
 import yapilogo from "../../assets/images/yapi-logo.png";
 import Auth from "../../utils/auth";
 import "./header.css";
@@ -11,7 +13,7 @@ const Header = () => {
     Auth.logout();
   };
   return (
-    <header className="bg-primary text-light mb-4 py-3 flex-row align-center">
+    <section className="hero hero--video">
       <div className="container flex-row justify-space-between-lg justify-center align-center">
         <div>
           <Link className="text-light" to="/">
@@ -40,7 +42,21 @@ const Header = () => {
           )}
         </div>
       </div>
-    </header>
+      <div className="search">
+        <form>
+          <input
+            className="input"
+            type="text"
+            name="s"
+            placeholder="How may we help you?"
+          />
+          <button type="submit">
+            <FaSearch />
+          </button>
+        </form>
+      </div>
+      <img className="image" src={hero} alt="hero image"></img>
+    </section>
   );
 };
 
