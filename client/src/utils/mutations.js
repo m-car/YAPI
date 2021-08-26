@@ -24,20 +24,25 @@ export const ADD_USER = gql`
   }
 `;
 
-
-
-export const ADD_COMMENT = gql`
-  mutation addComment($thoughtId: ID!, $commentText: String!) {
-    addComment(thoughtId: $thoughtId, commentText: $commentText) {
+export const ADD_REVIEW = gql`
+  mutation addReview(
+    $api: String!
+    $username: String
+    $rating: Int
+    $comment: String
+  ) {
+    addReview(
+      api: $api
+      username: $username
+      rating: $rating
+      comment: $comment
+    ) {
       _id
-      thoughtText
-      thoughtAuthor
-      createdAt
-      comments {
-        _id
-        commentText
-        createdAt
-      }
+      api
+      username
+      rating
+      comment
+      date
     }
   }
 `;
