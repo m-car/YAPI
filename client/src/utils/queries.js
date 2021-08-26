@@ -1,20 +1,5 @@
 import { gql } from "@apollo/client";
 
-export const QUERY_USER = gql`
-  query user($username: String!) {
-    user(username: $username) {
-      _id
-      username
-      email
-      thoughts {
-        _id
-        thoughtText
-        createdAt
-      }
-    }
-  }
-`;
-
 export const QUERY_SEARCH = gql`
   query searchResults($input: String) {
     search(input: $input) {
@@ -23,21 +8,30 @@ export const QUERY_SEARCH = gql`
       category
       description
       url
+      rating
     }
   }
 `;
 
-export const QUERY_ME = gql`
-  query me {
-    me {
+export const QUERY_API = gql`
+  query getApi($id: ID!) {
+    getApi(id: $id) {
       _id
-      username
-      email
-      thoughts {
+      title
+      category
+      description
+      url
+      auth
+      https
+      cors
+      rating
+      reviews {
         _id
-        thoughtText
-        thoughtAuthor
-        createdAt
+        api
+        username
+        rating
+        comment
+        date
       }
     }
   }
