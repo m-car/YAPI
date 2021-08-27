@@ -1,31 +1,54 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+
+import { Link, useParams } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
-import hero from "../assets/images/hero.jpg";
-import yapilogo from "../assets/images/yapi-logo.png";
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { FaYelp } from "react-icons/fa";
 import Auth from "../utils/auth";
 import "./home.css";
 import { useQuery } from "@apollo/client";
+import { QUERY_SEARCH } from "../utils/queries";
 
 const Home = () => {
-  const logout = (event) => {
+  const [searchState, setSearchState] = useState({ input: "" });
+  // Use `useParams()` to retrieve value of the route parameter `:profileId`
+  const { userSearch } = useParams();
+
+  const { loading, data } = useQuery(QUERY_SEARCH, {
+    variables: { userSearch: userSearch },
+  });
+
+  // submit form
+  const handleSearchSubmit = async (event) => {
     event.preventDefault();
-    Auth.logout();
+    console.log(searchState);
+    const userInput = data?.userInput || {};
+
+    // clear form values
+    setSearchState({
+      input: "",
+    });
   };
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div>
       <section className="hero">
         <header className="hero-header">
-          <h1 className="hero-title">The title of this hero module</h1>
+          <h1 className="hero-title">YAPI</h1>
         </header>
         <footer className="hero-footer">
           <div className="search">
-            <form>
+            <form onSubmit={handleSearchSubmit}>
               <input
                 className="input"
                 type="text"
-                name="s"
-                placeholder="How may we help you?"
+                placeholder={"Search API or Category"}
+                value={searchState.input}
               />
               <button type="submit">
                 <FaSearch />
@@ -37,57 +60,54 @@ const Home = () => {
 
       <section class="wrapper">
         <div class="span-third">
-          <p class="placeholder">placeholder</p>
+          <p class="placeholder"></p>
         </div>
         <div class="span-twothirds">
           <p class="sans summary justify">
-            &bdquo;The history of art and art's condition at any time are pretty
-            messy&ldquo; schreibt Donald Judd 1964 in einem Artikel, der sich
-            der New Yorker Kunstszene widmet. Er wendet sich darin gegen
-            traditionelle Unterscheidungen von Stilen und Gattungen und
-            pl&auml;diert f&uuml;r eine ungezwungene Begegnung mit Kunstwerken.
-            Judds Analysis einer lokalen Szene ist Augangspunkt f&uuml;r das
-            Experiment. Werke aus der Friedrich Christian Flick Collection und
-            der Sammlung der Nationalgalerie, erg&auml;zt durch ausgew&auml;hlte
-            Leihgaben, in den Kontext ihrer Entstehung zu bringen.
+            We have all spent too many hours scowering the web for a not so
+            great API that ends up not working out in the end. Back to square
+            one, looking for an API, but this time don't waste your precious
+            time. Alot of developers can relate, so they come to YAPI to leave a
+            review on their experience with an API. You don't have to test all
+            API's to see if they are compatible with your project, the users of
+            YAPI fix that problem. Look up any API and find out what other
+            developers think of it. Or maybe you've used an API that ended up
+            not giving you the result you wanted, let other users know by
+            leaving a review.
           </p>
           <p class="sans summary">
-            Welche Kunst war pr&auml;gend f&uuml;r Donald Judd? Was Verbindet
-            Konrad Lueg, Sigmar Polke und Gerhard Richter? Welche Galerien haben
-            Bruce Nauman oder Jenny Holzer in ihren fr&uuml;hen Karrierephasen
-            unterst&uuml;tzt? Mintunter ungew&ouml;hnliche Werk-Aufstellungen
-            liefern Momentaufnahmen aus dem New York und D&uuml;sseldorf der
-            1960er- und 1970er-Jahre, dem K&ouml;ln der 1980er-, dem Berlin und
-            Los Angeles der 1990er Jahre.
-          </p>
-          <p class="sans summary">
-            Im Fr&uuml;hjahr 2019 erscheint eine Publikation zur Ausstellung.
+            The team at YAPI want users to share their insights on API's that
+            are not found at the surface level. Users leave great reviews that
+            allow interested users to make a decision of thier own. We hope that
+            you save time and reach those deadlines with time to spare.
           </p>
         </div>
-        <div class="span-threefourths sans summary justify">
+        <div class="line-left summary span-fourth sans">
           <p>
-            The history of art and art's condition at any time are pretty
-            messy", Donald Judd wrote in 1964 in an article on the New York art
-            scene. In this piece he opposed traditional differentiations of
-            style and genre, advocating instead a more casual encounter with
-            works of art. Judd's analysis of the local art scene is the starting
-            point for an experiment that takes works from the Friedrich
-            Christian Flick Collection and the Collectino of the Nationalgalerie
-            &ndash; enhanced by selected loans &ndash; and resituates them
-            within the context of their making.
+            Vivi Cowan:
+            <br /> "A cool person"
+            <br /> <FaGithub /> :
+            <br /> <FaLinkedin /> :
+            <br /> <FaYelp /> :
           </p>
-          <p>
-            Which art influenced Donald Judd? What connects Konrad Lueg, Sigmar
-            Polke and Gerhard Richter? Which galleries supported Bruce Nauman
-            and Jenny Holzer during the early stages of their careers?
-            Occasionally unusual work constellations provide snapshots of New
-            York and D&uuml;sseldorf in the 1960s and 1970s, Cologne in the
-            1980s, Berlin and Los Angeles in the 1990s.
-          </p>
-          <p>An exhibition catalogue will be published in spring 2019.</p>
         </div>
-        <div class="span-fourth">
-          <p class="placeholder">placeholder</p>
+        <div class="line-left span-fourth summary sans">
+          <p>
+            Maxwell Dunn:
+            <br /> "A cool person"
+            <br /> <FaGithub /> :
+            <br /> <FaLinkedin /> :
+            <br /> <FaYelp /> :
+          </p>
+        </div>
+        <div class="line-left span-fourth summary sans">
+          <p>
+            Marko Caric:
+            <br /> "A cool person"
+            <br /> <FaGithub /> :
+            <br /> <FaLinkedin /> :
+            <br /> <FaYelp /> :
+          </p>
         </div>
       </section>
     </div>

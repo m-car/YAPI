@@ -6,7 +6,9 @@ const resolvers = {
   Query: {
     search: async (parent, { input }) => {
       const regex = new RegExp(`${input}`, "i");
-      return API.find({ $or: [{ title: regex }, { category: regex }] });
+      return await API.find({
+        $or: [{ title: regex }, { category: regex }],
+      }).populate("reviews");
     },
     test: () => {
       return API.find({ category: "Animals" });

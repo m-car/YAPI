@@ -2,72 +2,63 @@ import React from "react";
 import Categories from "../components/Categories";
 import "./list.css";
 
-import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
+import { QUERY_SEARCH } from "../utils/queries";
+import { useParams } from "react-router-dom";
 
 const List = () => {
-  const results = [
-    {
-      title: "Dog API",
-      category: "Animals",
-      description: "An API about dogs and what not.",
-      url: "https://dogsapi.com",
-      auth: "apiKey",
-      https: "Yes",
-      cors: "No",
-    },
-    {
-      title: "Cat API",
-      category: "Animals",
-      description: "An API about cats and what not.",
-      url: "https://catsapi.com",
-      auth: "apiKey",
-      https: "No",
-      cors: "Yes",
-    },
-    {
-      title: "Movie API",
-      category: "Movies",
-      description: "An API about movies and what not.",
-      url: "https://moviesapi.com",
-      auth: "apiKey",
-      https: "yes",
-      cors: "No",
-    },
-  ];
-
-  let arr = [];
-
-  results.forEach((el) => {
-    const block = (
-      <div className="searchResult" key={el.title}>
-        <h3>{el.title}</h3>
-        <h5>{el.category}</h5>
-        <p>{el.description}</p>
-        <p>
-          Auth:<span className="authTag">{el.auth}</span>
-          <br></br>Https:<span className="httpsTag">{el.https}</span>
-          <br></br>cors:
-          <span className="corsTag">{el.cors}</span>
-        </p>
-        <button
-          onClick={() => {
-            window.location = el.url;
-          }}
-        >
-          Check it out
-        </button>
-      </div>
-    );
-    arr.push(block);
+  const { userSearch } = useParams();
+  console.log(userSearch);
+  const { data } = useQuery(QUERY_SEARCH, {
+    variables: { input: userSearch },
   });
 
   return (
     <div>
-      <div className="resContainer">{arr}</div>
+      <div className="resContainer">
+        {data?.search.map((api) => (
+          <ApiCard api={api} key={api._id} />
+        ))}
+      </div>
       <Categories />
     </div>
   );
 };
+
+function getRating(data) {
+  if (data.rating === -1) {
+    return "This API has no reviews yet.";
+  } else {
+    return data.rating;
+  }
+}
+
+function ApiCard({ api }) {
+  return (
+    <div className="searchResult">
+      <div className="searchDescription">
+        <h3>{api.title}</h3>
+        <p>{getRating(api)}</p>
+        <h5>{api.category}</h5>
+        <p>{api.description}</p>
+        <button
+          onClick={() => {
+            window.location = `/selected/${api._id}`;
+          }}
+        >
+          More details
+        </button>
+        <button
+          onClick={() => {
+            window.location = api.url;
+          }}
+        >
+          Check them out
+        </button>
+      </div>
+      <div className="categoryPhoto"></div>
+    </div>
+  );
+}
 
 export default List;

@@ -8,9 +8,7 @@ export const QUERY_SEARCH = gql`
       category
       description
       url
-      auth
-      https
-      cors
+      rating
     }
   }
 `;

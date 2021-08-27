@@ -28,6 +28,18 @@ apiSchema.virtual("reviews", {
   options: { sort: { date: -1 } }, // Query options, see http://bit.ly/mongoose-query-options
 });
 
+apiSchema.virtual("rating").get(function calculateRating() {
+  const reviews = this.get("reviews");
+  const ratings = reviews.map((rev) => rev.rating);
+  if (ratings.length) {
+    return (
+      reviews.map((rev) => rev.rating).reduce((a, b) => a + b) / reviews.length
+    );
+  } else {
+    return -1;
+  }
+});
+
 const API = model("API", apiSchema);
 
 module.exports = API;

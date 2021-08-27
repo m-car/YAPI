@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
-import "./login.css";
+import "./login-signup.css";
 
 import Auth from "../utils/auth";
 
@@ -41,11 +41,27 @@ const Login = (props) => {
     });
   };
 
+  const signupClickHandler = (e) => {
+    window.location = "/signup";
+  };
+
   return (
     <main className="flex-row justify-center mb-4">
       <div className="col-12 col-md-10 col-lg-7 customContainer">
         <div className="formContainer">
-          <h4 className="card-header p-2 head">Login</h4>
+          <div className="card-header p-2 head">
+            <button className="headButton activeSection">
+              <h4>Login</h4>
+            </button>
+            <h2 className="divider">|</h2>
+            <button
+              id="signupButton"
+              onClick={signupClickHandler}
+              className="headButton inactiveSection"
+            >
+              <h4>Sign Up</h4>
+            </button>
+          </div>
           <div className="card-body">
             {data ? (
               <p>
@@ -61,7 +77,12 @@ const Login = (props) => {
                   value={formState.email}
                   onChange={handleChange}
                 />
-                <label for="email" className="emailLabel">
+                <label
+                  htmlFor="email"
+                  className={
+                    formState.email ? "emailLabelStatic" : "emailLabel"
+                  }
+                >
                   Email
                 </label>
                 <input
@@ -71,7 +92,12 @@ const Login = (props) => {
                   value={formState.password}
                   onChange={handleChange}
                 />
-                <label for="password" className="passwordLabel">
+                <label
+                  htmlFor="password"
+                  className={
+                    formState.password ? "passwordLabelStatic" : "passwordLabel"
+                  }
+                >
                   Password
                 </label>
                 <button
