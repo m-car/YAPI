@@ -36,24 +36,27 @@ function getRating(data) {
 function ApiCard({ api }) {
   return (
     <div className="searchResult">
-      <h3>{api.title}</h3>
-      <p>{getRating(api)}</p>
-      <h5>{api.category}</h5>
-      <p>{api.description}</p>
-      <button
-        onClick={() => {
-          window.location = `/selected/${api._id}`;
-        }}
-      >
-        More details
-      </button>
-      <button
-        onClick={() => {
-          window.location = api.url;
-        }}
-      >
-        Check them out
-      </button>
+      <div className="searchDescription">
+        <h3>{api.title}</h3>
+        <p>{getRating(api)}</p>
+        <h5>{api.category}</h5>
+        <p>{api.description}</p>
+        <button
+          onClick={() => {
+            window.location = `/selected/${api._id}`;
+          }}
+        >
+          More details
+        </button>
+        <button
+          onClick={() => {
+            window.location = api.url;
+          }}
+        >
+          Check them out
+        </button>
+      </div>
+      <div className="categoryPhoto"></div>
     </div>
   );
 }

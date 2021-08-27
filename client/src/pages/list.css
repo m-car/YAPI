@@ -1,36 +1,24 @@
 .searchResult {
-  background-color: lemonchiffon;
-  border-radius: 10px;
-  padding: 10px;
+  background-color: rgba(255, 250, 205, 0.295);
+  border-radius: 5px;
   margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.authTag {
-  background-color: purple;
-  text-shadow: 1px 1px black;
-  padding: 1px 2px;
-  border-radius: 3px;
-  color: white;
-  margin-left: 5px;
-}
-.httpsTag {
-  background-color: green;
-  text-shadow: 1px 1px black;
-  padding: 1px 2px;
-  border-radius: 3px;
-  color: white;
-  margin-left: 5px;
-}
-.corsTag {
-  background-color: blue;
-  text-shadow: 1px 1px black;
-  padding: 1px 2px;
-  border-radius: 3px;
-  color: white;
-  margin-left: 5px;
+.searchDescription {
+  padding: 10px;
 }
 
-@media screen and (min-width: 576px) {
+.categoryPhoto {
+  background-image: url("../assets/images/hero.jpg");
+  background-position: center;
+  background-size: cover;
+  flex: 0 0 100px;
+  border-radius: 0px 5px 5px 0px;
+}
+
+@media screen and (min-width: 768px) {
   .resContainer {
     display: flex;
     flex-wrap: wrap;
@@ -43,7 +31,7 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1200px) {
   .searchResult {
     flex: 1 0 30%;
   }
