@@ -1,5 +1,5 @@
 .searchResult {
-  background-color: rgba(255, 250, 205, 0.295);
+  background-image: linear-gradient(to right, rgba(255, 250, 205, 0.295), teal);
   border-radius: 5px;
   margin-bottom: 10px;
   display: flex;
@@ -41,7 +41,7 @@
   border: none;
   padding: 5px;
   box-shadow: 5px 5px purple;
-  transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .detailButton:hover {
