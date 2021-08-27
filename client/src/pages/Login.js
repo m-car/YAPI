@@ -2,24 +2,13 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
-import "./login.css";
+import "./login-signup.css";
 
 import Auth from "../utils/auth";
 
 const Login = (props) => {
-  // const [whichForm, setWhichForm] = useState("login");
   const [formState, setFormState] = useState({ email: "", password: "" });
   const [login, { error, data }] = useMutation(LOGIN_USER);
-
-  // const switchForm = (e, form) => {
-  //   if (form === whichForm) {
-  //     return;
-  //   } else if (form === "login") {
-  //     setWhichForm("login");
-  //   } else {
-  //     setWhichForm("signUp");
-  //   }
-  // };
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -52,12 +41,8 @@ const Login = (props) => {
     });
   };
 
-  const handleInputClick = () => {
-    // set inactive to signup and display login
-  };
-
-  const handleSignUpClick = () => {
-    // set inactive to login and display sign up
+  const signupClickHandler = (e) => {
+    window.location = "/signup";
   };
 
   return (
@@ -65,12 +50,13 @@ const Login = (props) => {
       <div className="col-12 col-md-10 col-lg-7 customContainer">
         <div className="formContainer">
           <div className="card-header p-2 head">
-            <button onClick={handleInputClick()} className="headButton">
+            <button className="headButton activeSection">
               <h4>Login</h4>
             </button>
             <h2 className="divider">|</h2>
             <button
-              onClick={handleSignUpClick()}
+              id="signupButton"
+              onClick={signupClickHandler}
               className="headButton inactiveSection"
             >
               <h4>Sign Up</h4>
@@ -91,7 +77,12 @@ const Login = (props) => {
                   value={formState.email}
                   onChange={handleChange}
                 />
-                <label for="email" className="emailLabel">
+                <label
+                  htmlFor="email"
+                  className={
+                    formState.email ? "emailLabelStatic" : "emailLabel"
+                  }
+                >
                   Email
                 </label>
                 <input
@@ -101,7 +92,12 @@ const Login = (props) => {
                   value={formState.password}
                   onChange={handleChange}
                 />
-                <label for="password" className="passwordLabel">
+                <label
+                  htmlFor="password"
+                  className={
+                    formState.password ? "passwordLabelStatic" : "passwordLabel"
+                  }
+                >
                   Password
                 </label>
                 <button
