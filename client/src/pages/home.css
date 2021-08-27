@@ -1,10 +1,55 @@
-.hero .search {
+#header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#logo {
+  text-decoration: none;
+  color: white;
+  font-size: 5vh;
+  font-weight: bold;
+}
+	
+#menu-icon {
+  font-family: Geneva, sans-serif;
+  font-size: 6vh;
+}
+	
+.hero {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100vh;
+	padding: 1em;
+	box-sizing: border-box;
+	color: white;
+	background: url("../assets/images/hero-unsplash.jpg") center center no-repeat;
+	background-size: cover;
+	filter: blur(20%);
+}
+
+.hero-title {
+	max-width: 16em;
+	margin: 0;
+	font-size: 12vh;
+	font-weight: bold;
+	line-height: .9;
+}
+
+.hero-footer {
+	display: flex;
+	margin-bottom: 1em;
+}
+
+
+.search {
   position: relative;
   vertical-align: middle;
   z-index: 2;
 }
 
-.hero .search input {
+.search input {
   width: 100%;
   height: 76px;
   line-height: 76px;
@@ -17,7 +62,7 @@
   border-radius: 0;
 }
 
-.hero .search button {
+.search button {
   position: absolute;
   top: 6px;
   right: 6px;
@@ -44,16 +89,18 @@
 }
 
 @media (max-width: 767.98px) {
-	.hero .search input {
+	.search input {
 	  background: rgba(0, 0, 0, 0.92);
 	  font-size: 20px;
 	  padding: 5px 5px 5px 10px;
 	  height: 60px;
 	}
   
-	.hero .search button {
+	.search button {
 	  height: 48px;
 	  width: 48px;
 	  line-height: 48px;
 	}
   }
+
+  @media only screen and (min-width: 32em) { .hero-title { font-size: 16vh; } }	

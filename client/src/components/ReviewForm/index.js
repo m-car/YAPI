@@ -10,7 +10,7 @@ const ReviewForm = ({ ReviewId }) => {
   const [commentText, setCommentText] = useState("");
   const [characterCount, setCharacterCount] = useState(0);
 
-  const [addComment, { error }] = useMutation(ADD_COMMENT);
+  const [addComment, { error }] = useMutation(ADD_REVIEW);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();

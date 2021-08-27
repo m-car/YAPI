@@ -1,13 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
 import hero from "../assets/images/hero.jpg";
 import yapilogo from "../assets/images/yapi-logo.png";
+import Auth from "../utils/auth";
 import "./home.css";
 import { useQuery } from "@apollo/client";
 
 const Home = () => {
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
   return (
-    <section class="hero">
+    <section className="hero">
       <header id="header">
         <div>
           <Link className="text-light" to="/">
@@ -36,10 +42,10 @@ const Home = () => {
           )}
         </div>
       </header>
-      <header class="hero-header">
-        <h1 class="hero-title">The title of this hero module</h1>
+      <header className="hero-header">
+        <h1 className="hero-title">The title of this hero module</h1>
       </header>
-      <footer class="hero-footer">
+      <footer className="hero-footer">
         <div className="search">
           <form>
             <input
@@ -55,10 +61,6 @@ const Home = () => {
         </div>
       </footer>
     </section>
-    // <section className="hero hero--video">
-
-    //   <img className="image" src={hero} alt="hero image"></img>
-    // </section>
   );
 };
 
