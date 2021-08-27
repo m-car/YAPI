@@ -35,7 +35,7 @@ const Selected = () => {
     return (
         <main className="flex-row justify-center  mb-4">
             <div className="col-12 col-lg-10">
-                <h1>SELECTED API PAGE</h1>
+
                 {/* 1 API INFO */}
 
                 {fakeAPI.map((api) => (
@@ -43,6 +43,7 @@ const Selected = () => {
                         <h1 className="card-header bg-dark text-light p-2">{api.title}</h1>
                         <div className="card-body">
                             <h2>Category: {api.category}</h2><p>Rating : 5 </p>
+
                             <a href={api.url}>Link to Site</a>
                             <p>Https: {api.https}</p>
                             <p>Auth Type: {api.auth}</p>

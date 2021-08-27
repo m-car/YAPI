@@ -17,16 +17,20 @@ const ReviewForm = ({ ReviewId }) => {
 
     try {
       const { data } = await addComment({
+        // ($api: String!, $username: String, $rating: Int, $comment: String)
         variables: {
-          ReviewId,
-          commentText,
-          commentAuthor: Auth.getProfile().data.username,
+
+          //   commentText
+          // commentAuthor: Auth.getProfile().data.username,
         },
+
       });
 
       setCommentText("");
+      console.log("submit ok")
     } catch (err) {
       console.error(err);
+      console.log("error on submit")
     }
   };
 
@@ -46,9 +50,8 @@ const ReviewForm = ({ ReviewId }) => {
       {Auth.loggedIn() ? (
         <>
           <p
-            className={`m-0 ${
-              characterCount === 280 || error ? "text-danger" : ""
-            }`}
+            className={`m-0 ${characterCount === 280 || error ? "text-danger" : ""
+              }`}
           >
             Character Count: {characterCount}/280
             {error && <span className="ml-2">{error.message}</span>}

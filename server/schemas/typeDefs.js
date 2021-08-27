@@ -23,7 +23,7 @@ const typeDefs = gql`
   }
   type Review {
     _id: ID
-    api: String
+    api: ID! 
     username: String
     rating: Int
     comment: String
@@ -44,9 +44,10 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addReview(
-      api: String!
-      username: String
-      rating: Int
+     "id of api associated with this review"
+      api: ID!
+      username: String!
+      rating: Int!
       comment: String
     ): Review
   }
