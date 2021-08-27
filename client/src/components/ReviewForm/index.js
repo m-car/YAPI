@@ -5,7 +5,17 @@ import { useParams } from "react-router-dom";
 import { ADD_REVIEW } from "../../utils/mutations";
 import decode from "jwt-decode";
 import Auth from "../../utils/auth";
-console.log(Auth.getToken())
+
+let userInfo = {
+  data: {
+    username: "Not logged in."
+  }
+}
+if (Auth.getToken()) {
+  userInfo = decode(Auth.getToken());
+}
+console.log(userInfo)
+console.log(userInfo.data.username)
 
 const ReviewForm = ({ ReviewId }) => {
   const [commentText, setCommentText] = useState("");
@@ -15,14 +25,14 @@ const ReviewForm = ({ ReviewId }) => {
   const { apiId } = useParams();
 
   const handleFormSubmit = async (event) => {
-    event.preventDefault();
+    // event.preventDefault();
 
     try {
       const { data } = await addReview({
         // $api: ID!, $username: String!, $rating: Int!, $comment: String
         variables: {
           comment: commentText,
-          username: "test username",
+          username: userInfo.data.username,
           rating: 5,
           api: apiId
         },
