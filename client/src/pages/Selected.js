@@ -5,23 +5,26 @@ import { QUERY_API } from "../utils/queries";
 import { useQuery } from "@apollo/client";
 
 const Selected = () => {
-    const { selected } = useParams();
+    const { apiId } = useParams();
+    console.log(apiId)
     const { data } = useQuery(QUERY_API, {
         variables: {
-            id: selected
+            id: apiId
         }
     });
+    console.log(data?.getApi.reviews)
+    const reviews = data?.getApi.reviews
 
-    const fakeAPI = [
+    const selectedAPI = [
 
         {
-            title: "Dog API",
-            category: "Animals",
-            description: "An API about dogs and what not.",
-            url: "https://dogsapi.com",
-            auth: "apiKey",
-            https: "Yes",
-            cors: "No",
+            title: data?.getApi.title,
+            category: data?.getApi.category,
+            description: data?.getApi.description,
+            url: data?.getApi.url,
+            auth: data?.getApi.auth,
+            https: data?.getApi.https,
+            cors: data?.getApi.cors,
         },
     ]
 
@@ -46,8 +49,8 @@ const Selected = () => {
 
                 {/* 1 API INFO */}
 
-                {fakeAPI.map((api) => (
-                    <div className="card">
+                {selectedAPI.map((api) => (
+                    <div key={api.url} className="card" >
                         <h1 className="card-header bg-dark text-light p-2">{api.title}</h1>
                         <div className="card-body">
                             <h2>Category: {api.category}</h2><p>Rating : 5 </p>
@@ -76,8 +79,8 @@ const Selected = () => {
                 <div className="card">
                     <h1 className="card-header bg-dark text-light p-2">Reviews</h1>
 
-                    {fakeComments.map((comment) => (
-                        <div className="card-body">
+                    {reviews?.map((comment) => (
+                        <div key={comment.username} className="card-body">
                             <h2>{comment.username}</h2>
                             <p>{comment.rating}</p>
                             <p>{comment.comment}</p>
@@ -86,7 +89,7 @@ const Selected = () => {
 
                 </div>
             </div>
-        </main>
+        </main >
     )
 
 
