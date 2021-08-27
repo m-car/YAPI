@@ -6,8 +6,6 @@ import { ADD_REVIEW } from "../../utils/mutations";
 import decode from "jwt-decode";
 import Auth from "../../utils/auth";
 console.log(Auth.getToken())
-const userinfo = decode(Auth.getToken());
-console.log(userinfo.data.username)
 
 const ReviewForm = ({ ReviewId }) => {
   const [commentText, setCommentText] = useState("");
@@ -23,9 +21,9 @@ const ReviewForm = ({ ReviewId }) => {
         // $api: ID!, $username: String!, $rating: Int!, $comment: String
         variables: {
           comment: commentText,
-          username: userinfo.data.username,
+          username: "test username",
           rating: 5,
-          api: "612917e4415a010fe0e99646"
+          api: ""
         },
 
       });
