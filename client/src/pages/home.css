@@ -169,6 +169,8 @@ body {
 	padding: 10px;
 	text-align: center;
 	min-height: 300px;
+	background: url("../assets/images/hero-unsplash.jpg") center center no-repeat;
+	background-size: cover;
 }
 
 /* GRID */
