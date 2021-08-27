@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
-
+import { useParams } from "react-router-dom";
 import { ADD_REVIEW } from "../../utils/mutations";
 import decode from "jwt-decode";
 import Auth from "../../utils/auth";
@@ -12,6 +12,7 @@ const ReviewForm = ({ ReviewId }) => {
   const [characterCount, setCharacterCount] = useState(0);
 
   const [addReview, { error }] = useMutation(ADD_REVIEW);
+  const { apiId } = useParams();
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -23,7 +24,7 @@ const ReviewForm = ({ ReviewId }) => {
           comment: commentText,
           username: "test username",
           rating: 5,
-          api: ""
+          api: apiId
         },
 
       });
