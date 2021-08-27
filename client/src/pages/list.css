@@ -1,5 +1,5 @@
 .searchResult {
-  background-color: rgba(255, 250, 205, 0.295);
+  background-image: linear-gradient(to right, rgba(255, 250, 205, 0.295), teal);
   border-radius: 5px;
   margin-bottom: 10px;
   display: flex;
@@ -11,7 +11,6 @@
 }
 
 .categoryPhoto {
-  background-image: url("../assets/images/hero.jpg");
   background-position: center;
   background-size: cover;
   flex: 0 0 100px;
@@ -21,6 +20,45 @@
 
 .searchResult:hover .categoryPhoto {
   flex: 1 0 110px;
+}
+
+.cardTitle {
+  border-bottom: solid purple;
+}
+
+.cardRating {
+  color: white;
+}
+
+.cardCategory {
+  border-bottom: thin dashed white;
+  padding-left: 2px;
+}
+
+.detailButton {
+  margin-right: 5px;
+  border-radius: 3px;
+  border: none;
+  padding: 5px;
+  box-shadow: 5px 5px purple;
+  transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.detailButton:hover {
+  cursor: pointer;
+  padding: 8px;
+  box-shadow: 0px 0px 8px purple;
+}
+
+.linkButton {
+  border: none;
+  text-decoration: underline;
+  background: rgba(255, 255, 255, 0);
+  color: rgb(54, 0, 54);
+}
+
+.linkButton:hover {
+  cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {
