@@ -1,9 +1,17 @@
 import React, { useState } from "react";
 import ReviewForm from "../components/ReviewForm/index"
-
-
+import { useParams } from "react-router-dom";
+import { QUERY_API } from "../utils/queries";
+import { useQuery } from "@apollo/client";
 
 const Selected = () => {
+    const { selected } = useParams();
+    const { data } = useQuery(QUERY_API, {
+        variables: {
+            id: selected
+        }
+    });
+
     const fakeAPI = [
 
         {

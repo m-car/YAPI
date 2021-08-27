@@ -3,28 +3,33 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 
 import { ADD_REVIEW } from "../../utils/mutations";
-
+import decode from "jwt-decode";
 import Auth from "../../utils/auth";
+console.log(Auth.getToken())
+const userinfo = decode(Auth.getToken());
+console.log(userinfo.data.username)
 
 const ReviewForm = ({ ReviewId }) => {
   const [commentText, setCommentText] = useState("");
   const [characterCount, setCharacterCount] = useState(0);
 
-  const [addComment, { error }] = useMutation(ADD_REVIEW);
+  const [addReview, { error }] = useMutation(ADD_REVIEW);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const { data } = await addComment({
-        // ($api: String!, $username: String, $rating: Int, $comment: String)
+      const { data } = await addReview({
+        // $api: ID!, $username: String!, $rating: Int!, $comment: String
         variables: {
-
-          //   commentText
-          // commentAuthor: Auth.getProfile().data.username,
+          comment: commentText,
+          username: userinfo.data.username,
+          rating: 5,
+          api: "612917e4415a010fe0e99646"
         },
 
       });
+      console.log(data)
 
       setCommentText("");
       console.log("submit ok")
@@ -60,6 +65,9 @@ const ReviewForm = ({ ReviewId }) => {
             className="flex-row justify-center justify-space-between-md align-center"
             onSubmit={handleFormSubmit}
           >
+            <div>
+              stars rating TODO
+            </div>
             <div className="col-12 col-lg-9">
               <textarea
                 name="commentText"
