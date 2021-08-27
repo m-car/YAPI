@@ -18,17 +18,22 @@ const typeDefs = gql`
     auth: String
     https: String
     cors: String
+    rating: Float
+    reviews: [Review]
   }
   type Review {
     _id: ID
-    api: API
+    api: String
     username: String
     rating: Int
     comment: String
+    date: Float
   }
   type Query {
     test: [API]
-    search: [API]
+    search(input: String): [API]
+    getApi(id: ID!): API
+    getReviews(id: ID!): [Review]
   }
   type Auth {
     token: ID!
@@ -38,6 +43,12 @@ const typeDefs = gql`
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
+    addReview(
+      api: String!
+      username: String
+      rating: Int
+      comment: String
+    ): Review
   }
 `;
 
