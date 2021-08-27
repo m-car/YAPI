@@ -30,9 +30,14 @@ apiSchema.virtual("reviews", {
 
 apiSchema.virtual("rating").get(function calculateRating() {
   const reviews = this.get("reviews");
-  return (
-    reviews.map((rev) => rev.rating).reduce((a, b) => a + b) / reviews.length
-  );
+  const ratings = reviews.map((rev) => rev.rating);
+  if (ratings.length) {
+    return (
+      reviews.map((rev) => rev.rating).reduce((a, b) => a + b) / reviews.length
+    );
+  } else {
+    return -1;
+  }
 });
 
 const API = model("API", apiSchema);

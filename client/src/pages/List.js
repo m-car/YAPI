@@ -13,13 +13,11 @@ const List = () => {
     variables: { input: userSearch },
   });
 
-  console.log(data);
-
   return (
     <div>
       <div className="resContainer">
         {data?.search.map((api) => (
-          <ApiCard api={api} />
+          <ApiCard api={api} key={api._id} />
         ))}
       </div>
       <Categories />
@@ -27,10 +25,19 @@ const List = () => {
   );
 };
 
+function getRating(data) {
+  if (data.rating === -1) {
+    return "This API has no reviews yet.";
+  } else {
+    return data.rating;
+  }
+}
+
 function ApiCard({ api }) {
   return (
-    <div className="searchResult" key={api.title}>
+    <div className="searchResult">
       <h3>{api.title}</h3>
+      <p>{getRating(api)}</p>
       <h5>{api.category}</h5>
       <p>{api.description}</p>
       <button

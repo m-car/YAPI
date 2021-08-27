@@ -7,8 +7,19 @@ import "./login.css";
 import Auth from "../utils/auth";
 
 const Login = (props) => {
+  // const [whichForm, setWhichForm] = useState("login");
   const [formState, setFormState] = useState({ email: "", password: "" });
   const [login, { error, data }] = useMutation(LOGIN_USER);
+
+  // const switchForm = (e, form) => {
+  //   if (form === whichForm) {
+  //     return;
+  //   } else if (form === "login") {
+  //     setWhichForm("login");
+  //   } else {
+  //     setWhichForm("signUp");
+  //   }
+  // };
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -45,7 +56,14 @@ const Login = (props) => {
     <main className="flex-row justify-center mb-4">
       <div className="col-12 col-md-10 col-lg-7 customContainer">
         <div className="formContainer">
-          <h4 className="card-header p-2 head">Login</h4>
+          <div className="card-header p-2 head">
+            <button>
+              <h4>Login</h4>
+            </button>
+            <button>
+              <h4>Sign Up</h4>
+            </button>
+          </div>
           <div className="card-body">
             {data ? (
               <p>

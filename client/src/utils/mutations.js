@@ -46,3 +46,26 @@ export const ADD_REVIEW = gql`
     }
   }
 `;
+
+export const ADD_COMMENT = gql`
+  mutation addReview(
+    $api: String!
+    $username: String
+    $rating: Int
+    $comment: String
+  ) {
+    addReview(
+      api: $api
+      username: $username
+      rating: $rating
+      comment: $comment
+    ) {
+      _id
+      api
+      username
+      rating
+      comment
+      date
+    }
+  }
+`;
