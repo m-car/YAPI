@@ -3,48 +3,33 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { useParams } from "react-router-dom";
 import { ADD_REVIEW } from "../../utils/mutations";
-import decode from "jwt-decode";
 import Auth from "../../utils/auth";
-
-let userInfo = {
-  data: {
-    username: "Not logged in."
-  }
-}
-if (Auth.getToken()) {
-  userInfo = decode(Auth.getToken());
-}
-console.log(userInfo)
-console.log(userInfo.data.username)
+import { QUERY_API } from "../../utils/queries";
 
 const ReviewForm = ({ ReviewId }) => {
   const [commentText, setCommentText] = useState("");
   const [characterCount, setCharacterCount] = useState(0);
 
-  const [addReview, { error }] = useMutation(ADD_REVIEW);
+  const [addReview, { error }] = useMutation(ADD_REVIEW, {
+    refetchQueries: [QUERY_API],
+  });
   const { apiId } = useParams();
 
   const handleFormSubmit = async (event) => {
-    // event.preventDefault();
-
+    event.preventDefault();
     try {
-      const { data } = await addReview({
-        // $api: ID!, $username: String!, $rating: Int!, $comment: String
+      await addReview({
         variables: {
           comment: commentText,
-          username: userInfo.data.username,
+          username: Auth.getProfile().data.username,
           rating: 5,
-          api: apiId
+          api: apiId,
         },
-
       });
-      console.log(data)
 
       setCommentText("");
-      console.log("submit ok")
     } catch (err) {
       console.error(err);
-      console.log("error on submit")
     }
   };
 
@@ -64,8 +49,9 @@ const ReviewForm = ({ ReviewId }) => {
       {Auth.loggedIn() ? (
         <>
           <p
-            className={`m-0 ${characterCount === 280 || error ? "text-danger" : ""
-              }`}
+            className={`m-0 ${
+              characterCount === 280 || error ? "text-danger" : ""
+            }`}
           >
             Character Count: {characterCount}/280
             {error && <span className="ml-2">{error.message}</span>}
@@ -74,9 +60,7 @@ const ReviewForm = ({ ReviewId }) => {
             className="flex-row justify-center justify-space-between-md align-center"
             onSubmit={handleFormSubmit}
           >
-            <div>
-              stars rating TODO
-            </div>
+            <div>stars rating TODO</div>
             <div className="col-12 col-lg-9">
               <textarea
                 name="commentText"
