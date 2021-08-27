@@ -63,7 +63,6 @@ function App() {
             </Route>
             {/*  */}
 
-            
             <Route exact path="/selected/:apiId">
               <Selected />
             </Route>

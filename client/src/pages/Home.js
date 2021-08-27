@@ -1,20 +1,40 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+
+import { Link, useParams } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaYelp } from "react-icons/fa";
-import hero from "../assets/images/hero.jpg";
-import yapilogo from "../assets/images/yapi-logo.png";
 import Auth from "../utils/auth";
 import "./home.css";
 import { useQuery } from "@apollo/client";
+import { QUERY_SEARCH } from "../utils/queries";
 
 const Home = () => {
-  const logout = (event) => {
+  const [searchState, setSearchState] = useState({ input: "" });
+  // Use `useParams()` to retrieve value of the route parameter `:profileId`
+  const { userSearch } = useParams();
+
+  const { loading, data } = useQuery(QUERY_SEARCH, {
+    variables: { userSearch: userSearch },
+  });
+
+  // submit form
+  const handleSearchSubmit = async (event) => {
     event.preventDefault();
-    Auth.logout();
+    console.log(searchState);
+    const userInput = data?.userInput || {};
+
+    // clear form values
+    setSearchState({
+      input: "",
+    });
   };
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div>
       <section className="hero">
@@ -23,12 +43,12 @@ const Home = () => {
         </header>
         <footer className="hero-footer">
           <div className="search">
-            <form>
+            <form onSubmit={handleSearchSubmit}>
               <input
                 className="input"
                 type="text"
-                name="s"
-                placeholder="What API are you looking for?"
+                placeholder={"Search API or Category"}
+                value={searchState.input}
               />
               <button type="submit">
                 <FaSearch />
