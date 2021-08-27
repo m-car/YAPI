@@ -22,6 +22,45 @@
   flex: 1 0 110px;
 }
 
+.cardTitle {
+  border-bottom: solid purple;
+}
+
+.cardRating {
+  color: white;
+}
+
+.cardCategory {
+  border-bottom: thin dashed white;
+  padding-left: 2px;
+}
+
+.detailButton {
+  margin-right: 5px;
+  border-radius: 3px;
+  border: none;
+  padding: 5px;
+  box-shadow: 5px 5px purple;
+  transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.detailButton:hover {
+  cursor: pointer;
+  padding: 8px;
+  box-shadow: 0px 0px 8px purple;
+}
+
+.linkButton {
+  border: none;
+  text-decoration: underline;
+  background: rgba(255, 255, 255, 0);
+  color: rgb(54, 0, 54);
+}
+
+.linkButton:hover {
+  cursor: pointer;
+}
+
 @media screen and (min-width: 768px) {
   .resContainer {
     display: flex;

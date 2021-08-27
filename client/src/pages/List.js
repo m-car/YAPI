@@ -91,11 +91,12 @@ function ApiCard({ api }) {
   return (
     <div className="searchResult">
       <div className="searchDescription">
-        <h3>{api.title}</h3>
-        <p>{getRating(api)}</p>
-        <h5>{api.category}</h5>
-        <p>{api.description}</p>
+        <h3 className="cardTitle">{api.title}</h3>
+        <p className="cardRating">⭐{getRating(api)}</p>
+        <h5 className="cardCategory">{api.category}</h5>
+        <p className="cardDescription">{api.description}</p>
         <button
+          className="detailButton"
           onClick={() => {
             window.location = `/selected/${api._id}`;
           }}
@@ -103,6 +104,7 @@ function ApiCard({ api }) {
           More details
         </button>
         <button
+          className="linkButton"
           onClick={() => {
             window.location = api.url;
           }}
