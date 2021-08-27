@@ -27,9 +27,6 @@ const Selected = () => {
   if (loading) {
     return <h3>loading reviews...</h3>;
   }
-  if (!reviews.length) {
-    return <h3>No Reviews Yet</h3>;
-  }
 
   return (
     <main className="flex-row justify-center  mb-4">
