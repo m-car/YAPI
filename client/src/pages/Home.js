@@ -19,7 +19,7 @@ const Home = () => {
     <div>
       <section className="hero">
         <header className="hero-header">
-          <h1 className="hero-title">Crowd-Sourced Reviews on Public API's</h1>
+          <h1 className="hero-title">YAPI</h1>
         </header>
         <footer className="hero-footer">
           <div className="search">

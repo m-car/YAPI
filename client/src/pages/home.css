@@ -1,6 +1,6 @@
 :root {
-	--coral: #b79ec2;
-	--jade:  #1f1f1fe5;
+	--coral: #a596ac;
+	--jade:  #1b1b1be5;
 }
 body {
 	background: var(--jade);
@@ -32,11 +32,10 @@ body {
 	height: 100vh;
 	padding: 1em;
 	box-sizing: border-box;
-	color: rgb(70, 70, 70);
-	text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+	color: rgba(39, 32, 44, 0.849);
+	text-shadow: 4px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
 	background: url("../assets/images/hero-unsplash.jpg") center center no-repeat;
 	background-size: cover;
-	filter: blur(20%);
 }
 
 .hero-title {
