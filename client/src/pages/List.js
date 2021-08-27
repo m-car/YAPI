@@ -1,5 +1,4 @@
 import React from "react";
-import Categories from "../components/Categories";
 import "./list.css";
 
 import { useQuery } from "@apollo/client";
@@ -13,6 +12,16 @@ import authentication from "../assets/images/authentication.jpg";
 import books from "../assets/images/books.jpg";
 import business from "../assets/images/business.jpg";
 import calendar from "../assets/images/calendar.jpg";
+import cloudstoragefilesharing from "../assets/images/cloud-storage-&-file-sharing.png";
+import continuousintegration from "../assets/images/continuous-integration.png";
+import cryptocurrency from "../assets/images/cryptocurrency.jpg";
+import currencyexchange from "../assets/images/currency-exchange.jpg";
+import datavalidation from "../assets/images/data-validation.jpg";
+import development from "../assets/images/development.jpg";
+import dictionaries from "../assets/images/dictionaries.jpg";
+import documentsproductivity from "../assets/images/documents-&-productivity.jpg";
+import environment from "../assets/images/environment.jpg";
+import events from "../assets/images/events.jpg";
 
 const List = () => {
   const { userSearch } = useParams();
@@ -81,6 +90,56 @@ function ApiCard({ api }) {
     case "calendar":
       bgImg = {
         backgroundImage: `url(${calendar})`,
+      };
+      break;
+    case "cloudstoragefilesharing":
+      bgImg = {
+        backgroundImage: `url(${cloudstoragefilesharing})`,
+      };
+      break;
+    case "continuousintegration":
+      bgImg = {
+        backgroundImage: `url(${continuousintegration})`,
+      };
+      break;
+    case "cryptocurrency":
+      bgImg = {
+        backgroundImage: `url(${cryptocurrency})`,
+      };
+      break;
+    case "currencyexchange":
+      bgImg = {
+        backgroundImage: `url(${currencyexchange})`,
+      };
+      break;
+    case "datavalidation":
+      bgImg = {
+        backgroundImage: `url(${datavalidation})`,
+      };
+      break;
+    case "development":
+      bgImg = {
+        backgroundImage: `url(${development})`,
+      };
+      break;
+    case "dictionaries":
+      bgImg = {
+        backgroundImage: `url(${dictionaries})`,
+      };
+      break;
+    case "documentsproductivity":
+      bgImg = {
+        backgroundImage: `url(${documentsproductivity})`,
+      };
+      break;
+    case "environment":
+      bgImg = {
+        backgroundImage: `url(${environment})`,
+      };
+      break;
+    case "events":
+      bgImg = {
+        backgroundImage: `url(${events})`,
       };
       break;
     default:
