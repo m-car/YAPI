@@ -28,7 +28,6 @@ const List = () => {
           <ApiCard api={api} key={api._id} />
         ))}
       </div>
-      <Categories />
     </div>
   );
 };
