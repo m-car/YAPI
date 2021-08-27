@@ -49,7 +49,9 @@ const fetchApiCollection = async () => {
 };
 
 db.once("open", async () => {
+  // REMOVE THIS LINE BEFORE PRODUCTION
   await db.dropDatabase();
+  // REMOVE ABOVE LINE BEFORE PRODUCTION
   const apiData = await fetchApiCollection();
   await API.deleteMany({});
   await API.create(apiData);

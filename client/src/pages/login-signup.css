@@ -1,0 +1,236 @@
+/* Handle layout of all inputs and buttons within the entire form */
+
+.customContainer {
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px #2d3e50;
+  margin-top: 60px;
+}
+
+.formContainer {
+  padding: 10px;
+  border: none;
+  border-radius: 2px;
+}
+
+/* This styles the top where user can click login or sign up */
+
+.head {
+  border-bottom: 2px solid rgba(128, 128, 128, 0.404);
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.headButton {
+  flex: 1 0 100px;
+  color: white;
+  background-color: #353535;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px white;
+  box-shadow: inset 0px -3px 0px white;
+}
+
+.activeSection {
+  animation: reverseFade 0.5s forwards;
+}
+
+.inactiveSection {
+  cursor: pointer;
+  box-shadow: none;
+  animation-duration: 0.5s;
+  animation-name: fade;
+  animation-fill-mode: forwards;
+}
+
+@keyframes reverseFade {
+  from {
+    color: green;
+    text-shadow: 0px 10px purple;
+  }
+  to {
+    color: white;
+    text-shadow: 0px 0px white;
+  }
+}
+
+@keyframes fade {
+  from {
+    color: white;
+    text-shadow: 0px 0px white;
+  }
+  to {
+    color: green;
+    text-shadow: 0px 10px purple;
+  }
+}
+
+.divider {
+  color: rgba(128, 128, 128, 0.404);
+}
+
+/* Style for input boxes and all responsiveness on the login page */
+
+.userInput {
+  border: none;
+  border-bottom: 1px solid black;
+  color: purple;
+  font-size: 1.2rem;
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.625rem 0;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.userEmail {
+  margin-bottom: 40px;
+}
+
+.emailLabel {
+  padding-top: 10px;
+  left: 30px;
+  top: 108px;
+  position: absolute;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+/* focus is what causes the label to shift positions when the user is ready to type */
+
+.userEmail:focus {
+  outline: none;
+  border: solid #2d3e50;
+  border-radius: 10px;
+}
+
+.userEmail:focus + label {
+  top: 68px;
+  font-size: 1rem;
+}
+
+.passwordLabel {
+  padding-top: 10px;
+  left: 30px;
+  top: 206px;
+  position: absolute;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.userPassword:focus {
+  outline: none;
+  border: solid #2d3e50;
+  border-radius: 10px;
+}
+
+.userPassword:focus + label {
+  top: 166px;
+  font-size: 1rem;
+}
+
+/* Styles for signup page */
+.username {
+  margin-bottom: 40px;
+}
+
+.userSignupEmail {
+  margin-bottom: 40px;
+}
+
+.username:focus {
+  outline: none;
+  border: solid #2d3e50;
+  border-radius: 10px;
+}
+
+.userSignupEmail:focus {
+  outline: none;
+  border: solid #2d3e50;
+  border-radius: 10px;
+}
+
+.userSignupPassword:focus {
+  outline: none;
+  border: solid #2d3e50;
+  border-radius: 10px;
+}
+
+.usernameSignupLabel {
+  padding-top: 10px;
+  left: 30px;
+  top: 108px;
+  position: absolute;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.emailSignupLabel {
+  padding-top: 10px;
+  left: 30px;
+  top: 206px;
+  position: absolute;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.passwordSignupLabel {
+  padding-top: 10px;
+  left: 30px;
+  top: 304px;
+  position: absolute;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.username:focus + label {
+  top: 68px;
+  font-size: 1rem;
+}
+.userSignupEmail:focus + label {
+  top: 166px;
+  font-size: 1rem;
+}
+.userSignupPassword:focus + label {
+  top: 264px;
+  font-size: 1rem;
+}
+
+/* ALL STATIC LABELS FOR WHEN INPUT IS OCCUPIED */
+
+.emailLabelStatic {
+  padding-top: 10px;
+  left: 30px;
+  position: absolute;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  top: 68px;
+  font-size: 1rem;
+}
+
+.passwordLabelStatic {
+  padding-top: 10px;
+  left: 30px;
+  position: absolute;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  top: 166px;
+  font-size: 1rem;
+}
+
+.usernameSignupLabelStatic {
+  padding-top: 10px;
+  left: 30px;
+  position: absolute;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  top: 68px;
+  font-size: 1rem;
+}
+
+.emailSignupLabelStatic {
+  padding-top: 10px;
+  left: 30px;
+  position: absolute;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  top: 166px;
+  font-size: 1rem;
+}
+
+.passwordSignupLabelStatic {
+  padding-top: 10px;
+  left: 30px;
+  position: absolute;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  top: 264px;
+  font-size: 1rem;
+}
