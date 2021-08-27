@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { FaYelp } from "react-icons/fa";
 import hero from "../assets/images/hero.jpg";
 import yapilogo from "../assets/images/yapi-logo.png";
 import Auth from "../utils/auth";
@@ -61,44 +64,29 @@ const Home = () => {
         </div>
         <div class="line-left summary span-fourth sans">
           <p>
-            Vivi Cowan
-            <br /> Dan Flavin
-            <br /> Isa Genzken
-            <br /> Jenny Holzer
-            <br /> Richard Jackson
-            <br /> Allan Kaprow
-            <br /> Manfred Kuttner
-            <br /> Barbara Kruger
-            <br /> Louise Lawler
+            Vivi Cowan:
+            <br /> "A cool person"
+            <br /> <FaGithub /> :
+            <br /> <FaLinkedin /> :
+            <br /> <FaYelp /> :
           </p>
         </div>
         <div class="line-left span-fourth summary sans">
           <p>
-            Maxwell Dunn
-            <br /> Konrad Lueg
-            <br /> Walter De Maria
-            <br /> Paul McCarthy
-            <br />
-            Robert Morris
-            <br /> Bruce Nauman
-            <br />
-            Claes Oldenburg
-            <br /> Sigmar Polke
-            <br /> Charlotte Posenenske
-            <br /> Jason Rhoades
+            Maxwell Dunn:
+            <br /> "A cool person"
+            <br /> <FaGithub /> :
+            <br /> <FaLinkedin /> :
+            <br /> <FaYelp /> :
           </p>
         </div>
         <div class="line-left span-fourth summary sans">
           <p>
-            Marko Caric
-            <br /> George Segal
-            <br /> Tony Smith
-            <br /> Robert Smithson
-            <br /> Frank Stella
-            <br /> Wolfgang Tillmans
-            <br /> Rirkrit Tiravanija
-            <br /> Rosemarie Trockel
-            <br /> Lawrence Weiner
+            Marko Caric:
+            <br /> "A cool person"
+            <br /> <FaGithub /> :
+            <br /> <FaLinkedin /> :
+            <br /> <FaYelp /> :
           </p>
         </div>
       </section>
