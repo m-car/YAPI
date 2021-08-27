@@ -1,10 +1,68 @@
-.hero .search {
+:root {
+	--coral: #b79ec2;
+	--jade:  #1f1f1fe5;
+}
+body {
+	background: var(--jade);
+	margin: 0;
+	padding: 20px;
+	color: var(--coral);
+	font-size: 14px;
+	line-height: 1.25;
+}
+
+
+#header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#logo {
+  text-decoration: none;
+  color: white;
+  font-size: 5vh;
+  font-weight: bold;
+}
+	
+#menu-icon {
+  font-family: Geneva, sans-serif;
+  font-size: 6vh;
+}
+	
+.hero {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100vh;
+	padding: 1em;
+	box-sizing: border-box;
+	color: white;
+	background: url("../assets/images/hero-unsplash.jpg") center center no-repeat;
+	background-size: cover;
+	filter: blur(20%);
+}
+
+.hero-title {
+	max-width: 16em;
+	margin: 0;
+	font-size: 12vh;
+	font-weight: bold;
+	line-height: .9;
+}
+
+.hero-footer {
+	margin-bottom: 1em;
+}
+
+
+.search {
   position: relative;
   vertical-align: middle;
   z-index: 2;
 }
 
-.hero .search input {
+.search input {
   width: 100%;
   height: 76px;
   line-height: 76px;
@@ -17,7 +75,7 @@
   border-radius: 0;
 }
 
-.hero .search button {
+.search button {
   position: absolute;
   top: 6px;
   right: 6px;
@@ -43,17 +101,116 @@
 	object-fit: cover;
 }
 
+.wrapper {
+	margin-top: 20px;
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-gap: 1em 3em;
+	
+}
+
+/* TYPE */
+.sans {
+	font-family: 'Work Sans', Helvetica, Arial, sans-serif;
+}
+
+.serif {
+	font-family: 'Cardo', Garamond, 'Times New Roman', serif;
+}
+
+.centre {
+	text-align: center;
+}
+
+.title {
+	font-size: 10em;
+	line-height: 90%;
+	margin: 40px 0;
+}
+
+.summary {
+	font-size: 1.5em;
+	line-height: 1.35;
+}
+
+.accent {
+	font-size: 2.5em;
+	line-height: 120%;
+	margin: 20px 0;
+}
+
+.caps {
+	text-transform: uppercase;
+}
+
+.justify {
+	text-align: justify;
+}
+
+.fine-print {
+	font-size: 8px;
+}
+/*LINES*/
+
+.line-btm {
+	border-bottom: 1px solid var(--coral);
+	width: 100%;
+	padding: 10px 0;
+}
+
+.line-left {
+	border-left: 1px solid var(--coral);
+	padding: 0 10px;
+}
+
+/* IMAGES */
+.placeholder {
+	border: 1px solid var(--coral);
+	padding: 10px;
+	text-align: center;
+	min-height: 300px;
+	background: url("../assets/images/hero-unsplash.jpg") center center no-repeat;
+	background-size: cover;
+}
+
+/* GRID */
+.span-all {
+	grid-column: span 12;
+}
+
+.span-third {
+	grid-column: span 4;
+}
+
+.span-fourth {
+	grid-column: span 3;
+}
+
+.span-half {
+	grid-column: span 6;
+}
+
+.span-twothirds {
+	grid-column: span 8;
+}
+
+.span-threefourths {
+	grid-column: span 9;
+}
+
 @media (max-width: 767.98px) {
-	.hero .search input {
+	.search input {
 	  background: rgba(0, 0, 0, 0.92);
 	  font-size: 20px;
 	  padding: 5px 5px 5px 10px;
 	  height: 60px;
 	}
   
-	.hero .search button {
+	.search button {
 	  height: 48px;
 	  width: 48px;
 	  line-height: 48px;
 	}
   }
+
+  @media only screen and (min-width: 32em) { .hero-title { font-size: 16vh; } }	
