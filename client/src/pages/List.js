@@ -6,6 +6,14 @@ import { useQuery } from "@apollo/client";
 import { QUERY_SEARCH } from "../utils/queries";
 import { useParams } from "react-router-dom";
 
+import animals from "../assets/images/animals.png";
+import anime from "../assets/images/anime.jpg";
+import artdesign from "../assets/images/art-&-design.jpg";
+import authentication from "../assets/images/authentication.jpg";
+import books from "../assets/images/books.jpg";
+import business from "../assets/images/business.jpg";
+import calendar from "../assets/images/calendar.jpg";
+
 const List = () => {
   const { userSearch } = useParams();
   console.log(userSearch);
@@ -34,6 +42,52 @@ function getRating(data) {
 }
 
 function ApiCard({ api }) {
+  let bgImg;
+  const bgFile = api.category
+    .toLowerCase()
+    .split(" ")
+    .filter((val) => val.match(/^[a-z]/))
+    .join("");
+  switch (bgFile) {
+    case "animals":
+      bgImg = {
+        backgroundImage: `url(${animals})`,
+      };
+      break;
+    case "anime":
+      bgImg = {
+        backgroundImage: `url(${anime})`,
+      };
+      break;
+    case "artdesign":
+      bgImg = {
+        backgroundImage: `url(${artdesign})`,
+      };
+      break;
+    case "authentication":
+      bgImg = {
+        backgroundImage: `url(${authentication})`,
+      };
+      break;
+    case "books":
+      bgImg = {
+        backgroundImage: `url(${books})`,
+      };
+      break;
+    case "business":
+      bgImg = {
+        backgroundImage: `url(${business})`,
+      };
+      break;
+    case "calendar":
+      bgImg = {
+        backgroundImage: `url(${calendar})`,
+      };
+      break;
+    default:
+      break;
+  }
+
   return (
     <div className="searchResult">
       <div className="searchDescription">
@@ -56,7 +110,7 @@ function ApiCard({ api }) {
           Check them out
         </button>
       </div>
-      <div className="categoryPhoto"></div>
+      <div className="categoryPhoto" style={bgImg}></div>
     </div>
   );
 }
