@@ -16,6 +16,11 @@
   background-size: cover;
   flex: 0 0 100px;
   border-radius: 0px 5px 5px 0px;
+  transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.searchResult:hover .categoryPhoto {
+  flex: 1 0 110px;
 }
 
 @media screen and (min-width: 768px) {

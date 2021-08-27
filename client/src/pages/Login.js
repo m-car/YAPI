@@ -52,15 +52,27 @@ const Login = (props) => {
     });
   };
 
+  const handleInputClick = () => {
+    // set inactive to signup and display login
+  };
+
+  const handleSignUpClick = () => {
+    // set inactive to login and display sign up
+  };
+
   return (
     <main className="flex-row justify-center mb-4">
       <div className="col-12 col-md-10 col-lg-7 customContainer">
         <div className="formContainer">
           <div className="card-header p-2 head">
-            <button>
+            <button onClick={handleInputClick()} className="headButton">
               <h4>Login</h4>
             </button>
-            <button>
+            <h2 className="divider">|</h2>
+            <button
+              onClick={handleSignUpClick()}
+              className="headButton inactiveSection"
+            >
               <h4>Sign Up</h4>
             </button>
           </div>
