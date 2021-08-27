@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 
-import { ADD_COMMENT } from "../../utils/mutations";
+import { ADD_REVIEW } from "../../utils/mutations";
 
 import Auth from "../../utils/auth";
 
@@ -10,7 +10,7 @@ const ReviewForm = ({ ReviewId }) => {
   const [commentText, setCommentText] = useState("");
   const [characterCount, setCharacterCount] = useState(0);
 
-  const [addComment, { error }] = useMutation(ADD_COMMENT);
+  const [addComment, { error }] = useMutation(ADD_REVIEW);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
