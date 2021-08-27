@@ -22,12 +22,16 @@ const Home = () => {
   // submit form
   const handleSearchSubmit = async (event) => {
     event.preventDefault();
-    console.log(searchState);
-    const userInput = data?.userInput || {};
+    console.log(searchState.input);
+    const userInput = searchState.input || {};
+    window.location = `/list/${userInput}`;
+  };
 
-    // clear form values
+  const handleFormChange = (event) => {
+    const { value } = event.target;
+
     setSearchState({
-      input: "",
+      input: value,
     });
   };
 
@@ -49,6 +53,7 @@ const Home = () => {
                 type="text"
                 placeholder={"Search API or Category"}
                 value={searchState.input}
+                onChange={handleFormChange}
               />
               <button type="submit">
                 <FaSearch />
@@ -58,12 +63,12 @@ const Home = () => {
         </footer>
       </section>
 
-      <section class="wrapper">
-        <div class="span-third">
-          <p class="placeholder"></p>
+      <section className="wrapper">
+        <div className="span-third">
+          <p className="placeholder"></p>
         </div>
-        <div class="span-twothirds">
-          <p class="sans summary justify">
+        <div className="span-twothirds">
+          <p className="sans summary justify">
             We have all spent too many hours scowering the web for a not so
             great API that ends up not working out in the end. Back to square
             one, looking for an API, but this time don't waste your precious
@@ -71,18 +76,18 @@ const Home = () => {
             review on their experience with an API. You don't have to test all
             API's to see if they are compatible with your project, the users of
             YAPI fix that problem. Look up any API and find out what other
-            developers think of it. Or maybe you've used an API that ended up
-            not giving you the result you wanted, let other users know by
+            developers think of it. Or maybe you've used an API that enNameded
+            up not giving you the result you wanted, let other users know by
             leaving a review.
           </p>
-          <p class="sans summary">
+          <p className="sans summary">
             The team at YAPI want users to share their insights on API's that
             are not found at the surface level. Users leave great reviews that
             allow interested users to make a decision of thier own. We hope that
             you save time and reach those deadlines with time to spare.
           </p>
         </div>
-        <div class="line-left summary span-fourth sans">
+        <div className="line-left summary span-fourth sans">
           <p>
             Vivi Cowan:
             <br /> "A cool person"
@@ -91,7 +96,7 @@ const Home = () => {
             <br /> <FaYelp /> :
           </p>
         </div>
-        <div class="line-left span-fourth summary sans">
+        <div className="line-left span-fourth summary sans">
           <p>
             Maxwell Dunn:
             <br /> "A cool person"
@@ -100,7 +105,7 @@ const Home = () => {
             <br /> <FaYelp /> :
           </p>
         </div>
-        <div class="line-left span-fourth summary sans">
+        <div className="line-left span-fourth summary sans">
           <p>
             Marko Caric:
             <br /> "A cool person"

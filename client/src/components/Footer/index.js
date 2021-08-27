@@ -1,5 +1,6 @@
 import React from "react";
 import { useLocation, useHistory } from "react-router-dom";
+import Categories from "../Categories";
 
 const Footer = () => {
   const location = useLocation();
@@ -27,6 +28,7 @@ const Footer = () => {
           </span>{" "}
           by Team Yapi
         </h4>
+        <Categories />
       </div>
     </footer>
   );
