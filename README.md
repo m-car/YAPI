@@ -60,12 +60,9 @@ If you decide to clone out repository, make sure that once you are in the CLI ty
 
 FEATURES   `¯\_(シ)_/¯`
 --------
-
-The Administration Menu module displays the entire administrative menu tree
-(and most local tasks) in a drop-down menu, providing administrators one- or
-two-click access to most pages.  Other modules may also add menu links to the
-menu using hook_admin_menu_output_alter().
-
+- Users have the ability search and API by name or category.
+- Users can Login, Sign up, and Log out.
+- Once logged in users can leave a review with a rating and comment. 
 
 
 CONTRIBUTORS  `ʕっ• ᴥ • ʔっ`
@@ -83,19 +80,19 @@ If you have any question about us or our project, feel free to contact us!
 
 - **Maxwell Dunn**
 
-  - [**Max's Portfolio**](https://zzangu0215.github.io/portfolio/) (to be updated)
-  - **Github**: [**zzangu0215**](https://github.com/zzangu0215)
-  - Email: **tajo0215@gmail.com**
+  - [**Max's Portfolio**](https://maxd66.github.io/my-portfolio/) 
+  - **Github**: [**maxd66**](https://github.com/maxd66)
+  - Email: **max.dunn63@gmail.com**
 
 - **Marko Caric**
 
-  - [**Marko's Portfolio**](https://imagallon.github.io/portfolio1.1/) (to be updated)
-  - **Github**: [**imagallon**](https://github.com/imagallon)
-  - Email: **izzymagallonworks@gmail.com**
+  - [**Marko's Portfolio**]()
+  - **Github**: [**m-car**](https://github.com/m-car)
+  - Email: **pbmc117@gmail.com**
 
 - **Vivianna Cowan**
 
-  - [**Vivi's Portfolio**](https://vivicowan.github.io/updated-portfolio/) (to be updated)
+  - [**Vivi's Portfolio**](https://vivicowan.github.io/updated-portfolio/)
   - **Github**: [**vivicowan**](https://github.com/vivicowan)
   - Email: **vivicowan0@gmail.com**
 
