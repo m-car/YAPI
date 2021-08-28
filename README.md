@@ -1,6 +1,7 @@
-# YAPI
+YAPI
+----
 
-[![License](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/IPL-1.0)
+[![License](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE)
 
 
 [![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
@@ -12,34 +13,48 @@
 [![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 
 
-## Table of Contents
 
-- [**Description**](#-description)
+TABLE OF CONTENTS   `ʕノ•ᴥ•ʔノ ︵ ┻━┻`
+-----------------
+
+- [**Introduction**](#-introduction)
 - [**Installation**](#-installation)
+- [**Features**](#-features)
 - [**Usage**](#-usage)
-- [**License**](#-license)
 - [**Contributors**](#-contributors)
+- [**Contact**](#-contact)
+- [**License**](#-license)
 
-## Description
 
-**MyKNL** is here for you to make a reservation at your local pet hotels.  
-If you need to be out of town for any reason without your dog?
+INTRODUCTION   `(｡^‿^｡)`
+------------
 
-We, **MyKNL**, the company of the team **Zzangu and the Pals**, are here to take care of your precious pup!! Easily sign up, add your pet, and make a reservation.
+The Administration Menu module displays the entire administrative menu tree
+(and most local tasks) in a drop-down menu, providing administrators one- or
+two-click access to most pages.  Other modules may also add menu links to the
+menu using hook_admin_menu_output_alter().
 
-Hurry up!! The kennels are about to be fully booked soon!! Don't miss the amazing experience with us!
+ * For a full description of the module, visit the project page:
+   https://www.drupal.org/project/admin_menu
+
+ * To submit bug reports and feature suggestions, or track changes:
+   https://www.drupal.org/project/issues/admin_menu
 
 **CLICK THE LOGO TO EXPLORE OUR WEBSITE**  
-[![Image Caption](public/images/logo_readme.PNG)](https://myknl-zap.herokuapp.com/)
-
-Below are the links for our proposal and presentation.
-
-- Proposal Link: [**MyKNL Proposal**](https://docs.google.com/document/d/1oeiXWUtq-m31DlMHyNK1g9FK8J4q763C3GixPM8mxKc/edit?usp=sharing)
-- Presentation Link: [**MyKNL Presentation**](https://docs.google.com/presentation/d/1rhb8wCvNMTrJTPZZ1ylaKObvnb1pCD_-xRjfb8RJT7E/edit?usp=sharing)
 
 
-## Installation
 
+ **Links to Presentation and Proposal**
+- Presentation Link: [**YAPI Presentation**](https://docs.google.com/presentation/d/1UWc7UL9M0mQpQ5fAv69IIcJT7CVqT4f9MVdogAV-ULo/edit#slide=id.p)
+- Proposal Link: [**YAPI Proposal**](https://docs.google.com/document/d/13z_gj7ZWftO4K7v0pe1X24_yZew4ca_W3CM6If3b5lc/edit)
+
+
+
+INSTALLATION   `⊂(￣(ｴ)￣)⊃`
+------------
+
+ * Install as you would normally install a contributed Drupal module. Visit
+   https://www.drupal.org/node/1897420 for further information.
 Type and run **`npm i`** in your terminal to install the following dependencies.
 
 - **`mysql`**
@@ -50,17 +65,52 @@ Type and run **`npm i`** in your terminal to install the following dependencies.
 - **`bcrypt`**
 - **`js-datepicker`**
 
-## Usage
+
+FEATURES   `¯\_(シ)_/¯`
+--------
+
+The Administration Menu module displays the entire administrative menu tree
+(and most local tasks) in a drop-down menu, providing administrators one- or
+two-click access to most pages.  Other modules may also add menu links to the
+menu using hook_admin_menu_output_alter().
 
 
-## License
 
-This application is covered by the **ISC** license.
-
-## Contributors
-
-🖐 If you have any question about us or our project, feel free to contact us!
+CONTRIBUTORS  `ʕっ• ᴥ • ʔっ`
+------------
 
 <a href="https://github.com/m-car/project-3/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=m-car/project-3" />
 </a>
+
+
+CONTACT   `└(=^‥^=)┐`
+-------
+
+If you have any question about us or our project, feel free to contact us!
+
+- **Maxwell Dunn**
+
+  - [**Max's Portfolio**](https://zzangu0215.github.io/portfolio/) (to be updated)
+  - **Github**: [**zzangu0215**](https://github.com/zzangu0215)
+  - Email: **tajo0215@gmail.com**
+
+- **Marko Caric**
+
+  - [**Marko's Portfolio**](https://imagallon.github.io/portfolio1.1/) (to be updated)
+  - **Github**: [**imagallon**](https://github.com/imagallon)
+  - Email: **izzymagallonworks@gmail.com**
+
+- **Vivianna Cowan**
+
+  - [**Vivi's Portfolio**](https://vivicowan.github.io/updated-portfolio/) (to be updated)
+  - **Github**: [**vivicowan**](https://github.com/vivicowan)
+  - Email: **vivicowan0@gmail.com**
+
+
+LICENSE  `(⌐■_■)`
+-------
+
+[![License](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE)
+
+This application is covered by the **MIT** license.
