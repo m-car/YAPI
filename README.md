@@ -29,22 +29,14 @@ TABLE OF CONTENTS   `ʕノ•ᴥ•ʔノ ︵ ┻━┻`
 INTRODUCTION   `(｡^‿^｡)`
 ------------
 
-The Administration Menu module displays the entire administrative menu tree
-(and most local tasks) in a drop-down menu, providing administrators one- or
-two-click access to most pages.  Other modules may also add menu links to the
-menu using hook_admin_menu_output_alter().
+**YAPI** is an API reviewing app, it allows users to search and find different api’s. In this app, user’s can go through the comments and ratings of previous users to make a decifer an opinion of their own about an API. Users are able to search API’s by their name or category. When finding an individual API, the average rating is displayed as well as the description. At the selected API, a user can leave a review with a comment and rating for other user’s to see.
 
- * For a full description of the module, visit the project page:
-   https://www.drupal.org/project/admin_menu
-
- * To submit bug reports and feature suggestions, or track changes:
-   https://www.drupal.org/project/issues/admin_menu
-
-**CLICK THE LOGO TO EXPLORE OUR WEBSITE**  
+**CLICK THE LOGO TO EXPLORE OUR DEPLOYED APP**  
+<a href="https://yapi-app.herokuapp.com/"><img alt="YAPI_APP" src="./client/src/assets/images/logo.png" ></a>
 
 
 
- **Links to Presentation and Proposal**
+**Links to Presentation and Proposal**
 - Presentation Link: [**YAPI Presentation**](https://docs.google.com/presentation/d/1UWc7UL9M0mQpQ5fAv69IIcJT7CVqT4f9MVdogAV-ULo/edit#slide=id.p)
 - Proposal Link: [**YAPI Proposal**](https://docs.google.com/document/d/13z_gj7ZWftO4K7v0pe1X24_yZew4ca_W3CM6If3b5lc/edit)
 
@@ -52,18 +44,18 @@ menu using hook_admin_menu_output_alter().
 
 INSTALLATION   `⊂(￣(ｴ)￣)⊃`
 ------------
+If you decide to clone out repository, make sure that once you are in the CLI type and run **`npm i`** in your terminal to install the following dependencies.
 
- * Install as you would normally install a contributed Drupal module. Visit
-   https://www.drupal.org/node/1897420 for further information.
-Type and run **`npm i`** in your terminal to install the following dependencies.
-
-- **`mysql`**
-- **`mysql2`**
-- **`express`**
-- **`sequelize`**
-- **`dotenv`**
+- **`@apollo/client`**
+- **`graphql`**
+- **`jwt-decode"`**
+- **`react`**
+- **`apollo-server-express`**
 - **`bcrypt`**
-- **`js-datepicker`**
+- **`mongoose`**
+- **`cheerio`**
+- **`jsonwebtoken`**
+- **`web-vitals`**
 
 
 FEATURES   `¯\_(シ)_/¯`
