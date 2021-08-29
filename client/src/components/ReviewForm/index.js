@@ -53,12 +53,12 @@ const ReviewForm = ({ ReviewId }) => {
             className="flex-row justify-center justify-space-between-md align-center"
             onSubmit={handleFormSubmit}
           >
-            <div className="alwaysLeft">stars rating TODO</div>
+            <div className="alwaysLeft col-12">stars rating TODO</div>
             <p
               className={`m-0 ${
                 characterCount === 280 || error
-                  ? "text-danger alwaysLeft"
-                  : "alwaysLeft"
+                  ? "text-danger alwaysLeft col-12"
+                  : "alwaysLeft col-12"
               }`}
             >
               Character Count: {characterCount}/280

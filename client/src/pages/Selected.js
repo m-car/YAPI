@@ -24,6 +24,7 @@ const Selected = () => {
       auth: data?.getApi.auth,
       https: data?.getApi.https,
       cors: data?.getApi.cors,
+      rating: data?.getApi.rating,
     },
   ];
   if (loading) {
@@ -37,10 +38,11 @@ const Selected = () => {
 
         {selectedAPI.map((api) => (
           <div key={api.url} className="card">
-            <h1 className="card-header bg-dark text-light p-2">{api.title}</h1>
+            <h1 className="darkBg p-2">
+              {api.title} <span>{api.rating}⭐</span>
+            </h1>
             <div className="card-body">
               <h2>{api.description}</h2>
-              <p>Rating : 5 </p>
               <table className="selectedTable">
                 <tr>
                   <th>Category</th>
@@ -85,7 +87,7 @@ const Selected = () => {
         {/* Reviews list */}
         <br></br>
         <div className="card">
-          <h1 className="card-header bg-dark text-light p-2">Reviews</h1>
+          <h1 className="darkBg p-2">Reviews</h1>
 
           {reviews?.map((rev) => (
             <div key={rev._id} className="card-body">
