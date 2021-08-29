@@ -99,10 +99,16 @@ const Home = () => {
         <div className="line-left span-fourth summary sans">
           <p>
             Maxwell Dunn:
-            <br /> "A cool person"
-            <br /> <FaGithub /> :
-            <br /> <FaLinkedin /> :
-            <br /> <FaYelp /> :
+            <br /> "The Machine, Mad Max"
+            <br /> <FaGithub /> : <a href="https://github.com/maxd66">Github</a>
+            <br /> <FaLinkedin /> :{" "}
+            <a href="https://www.linkedin.com/in/maxwell-dunn-a30374188/">
+              Linked In
+            </a>
+            <br /> <FaYelp /> :{" "}
+            <a href="https://www.yelp.com/user_details?userid=yZqDLyLFqtW6-eRgMhVNbw">
+              Yelp
+            </a>
           </p>
         </div>
         <div className="line-left span-fourth summary sans">
