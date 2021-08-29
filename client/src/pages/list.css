@@ -1,5 +1,5 @@
 .searchResult {
-  background-image: linear-gradient(to right, #116466, #2c3531);
+  background-image: linear-gradient(to right, #116466, #272727);
   border-radius: 5px;
   margin-bottom: 10px;
   display: flex;
@@ -54,7 +54,7 @@
   border: none;
   text-decoration: underline;
   background: rgba(255, 255, 255, 0);
-  color: rgb(54, 0, 54);
+  color: #ffcb9a;
 }
 
 .linkButton:hover {

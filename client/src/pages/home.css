@@ -1,6 +1,6 @@
 :root {
   --coral: #d1e8e2;
-  --jade: #2c3531;
+  --jade: #272727;
 }
 body {
   background: var(--jade);
