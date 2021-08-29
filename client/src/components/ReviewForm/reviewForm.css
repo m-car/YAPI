@@ -3,13 +3,6 @@
   text-align: left;
 }
 
-.pRight {
-  position: absolute;
-  right: 30px;
-  top: 468px;
-  font-size: medium;
-}
-
 .alwaysLeft {
   text-align: left;
   min-width: 90%;

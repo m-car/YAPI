@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { QUERY_API } from "../utils/queries";
 import { useQuery } from "@apollo/client";
 import "./selected.css";
+import { FaQuestionCircle } from "react-icons/fa";
 
 const Selected = () => {
   const { apiId } = useParams();
@@ -38,14 +39,42 @@ const Selected = () => {
           <div key={api.url} className="card">
             <h1 className="card-header bg-dark text-light p-2">{api.title}</h1>
             <div className="card-body">
-              <h2>Category: {api.category}</h2>
+              <h2>{api.description}</h2>
               <p>Rating : 5 </p>
-
+              <table className="selectedTable">
+                <tr>
+                  <th>Category</th>
+                  <td>{api.category}</td>
+                </tr>
+                <tr>
+                  <th>
+                    Https{" "}
+                    <a href="https://developer.squareup.com/docs/working-with-apis/tls-and-https">
+                      <FaQuestionCircle />
+                    </a>
+                  </th>
+                  <td>{api.https}</td>
+                </tr>
+                <tr>
+                  <th>
+                    Auth{" "}
+                    <a href="https://rapidapi.com/blog/api-glossary/api-authentication/">
+                      <FaQuestionCircle />
+                    </a>
+                  </th>
+                  <td>{api.auth}</td>
+                </tr>
+                <tr>
+                  <th>
+                    Cors{" "}
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">
+                      <FaQuestionCircle />
+                    </a>
+                  </th>
+                  <td>{api.cors}</td>
+                </tr>
+              </table>
               <a href={api.url}>Link to Site</a>
-              <p>Https: {api.https}</p>
-              <p>Auth Type: {api.auth}</p>
-              <p>Cors: {api.cors}</p>
-              <p>{api.description}</p>
             </div>
           </div>
         ))}

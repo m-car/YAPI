@@ -49,19 +49,21 @@ const ReviewForm = ({ ReviewId }) => {
 
       {Auth.loggedIn() ? (
         <>
-          <p
-            className={`m-0 ${
-              characterCount === 280 || error ? "text-danger pRight" : "pRight"
-            }`}
-          >
-            Character Count: {characterCount}/280
-            {error && <span className="ml-2">{error.message}</span>}
-          </p>
           <form
             className="flex-row justify-center justify-space-between-md align-center"
             onSubmit={handleFormSubmit}
           >
             <div className="alwaysLeft">stars rating TODO</div>
+            <p
+              className={`m-0 ${
+                characterCount === 280 || error
+                  ? "text-danger alwaysLeft"
+                  : "alwaysLeft"
+              }`}
+            >
+              Character Count: {characterCount}/280
+              {error && <span className="ml-2">{error.message}</span>}
+            </p>
             <div className="col-12">
               <textarea
                 name="commentText"
