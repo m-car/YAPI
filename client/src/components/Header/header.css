@@ -1,5 +1,14 @@
 .yapilogo {
-    border-radius: 50%;
-    width: 25%;
-   
+  border-radius: 50%;
+  width: 25%;
+}
+
+.mintBg {
+  background-color: #d1e8e2;
+  color: #2c3531;
+}
+
+.tealBg {
+  background-color: #116466;
+  color: #d1e8e2;
 }
