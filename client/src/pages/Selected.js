@@ -5,6 +5,7 @@ import { QUERY_API } from "../utils/queries";
 import { useQuery } from "@apollo/client";
 import "./selected.css";
 import { FaQuestionCircle } from "react-icons/fa";
+import { AiOutlineStar } from "react-icons/ai";
 import Auth from "../utils/auth";
 
 const Selected = () => {
@@ -34,13 +35,14 @@ const Selected = () => {
 
   const checkReviews = () => {
     let result = false;
-    reviews.forEach((val) => {
-      console.log(val.username);
-      console.log(Auth.getProfile().data.username);
-      if (val.username === Auth.getProfile().data.username) {
-        result = true;
-      }
-    });
+    console.log(Auth.loggedIn());
+    if (Auth.loggedIn()) {
+      reviews.forEach((val) => {
+        if (val.username === Auth.getProfile().data.username) {
+          result = true;
+        }
+      });
+    }
     return result;
   };
 
@@ -58,7 +60,12 @@ const Selected = () => {
               {api.rating === -1 ? (
                 <span className="noReviews">💔No reviews</span>
               ) : (
-                <span>{api.rating}⭐</span>
+                <span>
+                  {api.rating}
+                  <span className="ratingStarColor">
+                    <AiOutlineStar />
+                  </span>
+                </span>
               )}
             </h1>
             <div className="card-body px-4">
@@ -111,13 +118,23 @@ const Selected = () => {
         {/* Reviews list */}
         <br></br>
         <div className="card">
-          <h1 className="darkBg p-2">Reviews</h1>
+          <h1 className="lightBg p-2">Reviews</h1>
 
           {reviews?.map((rev) => (
-            <div key={rev._id} className="card-body">
-              <h2>{rev.username}</h2>
-              <p>{rev.rating}</p>
-              <p>{rev.comment}</p>
+            <div key={rev._id} className="card-body individualReview">
+              <h2 className="reviewHeader">
+                {rev.username}{" "}
+                <span className="ratingNumber">
+                  {rev.rating}
+                  <span className="ratingStarColor">
+                    <AiOutlineStar />
+                  </span>
+                </span>{" "}
+                <span className="smallDate">
+                  {new Date(rev.date).toDateString()}
+                </span>
+              </h2>
+              <p className="reviewText">{rev.comment}</p>
             </div>
           ))}
         </div>

@@ -1,7 +1,8 @@
 import React from "react";
+import "./reviewList.css";
 
 const ReviewList = ({ comments = [] }) => {
-  if (!comments.length) {
+  if (comments.length === 0) {
     return <h3>No Reviews Yet</h3>;
   }
 
