@@ -2,7 +2,7 @@
 
 .customContainer {
   border-radius: 10px;
-  box-shadow: 0px 0px 5px #2d3e50;
+  box-shadow: 0px 0px 5px #ffcb9a;
   margin-top: 60px;
 }
 
@@ -23,12 +23,12 @@
 
 .headButton {
   flex: 1 0 100px;
-  color: white;
-  background-color: #353535;
+  color: #d1e8e2;
+  background-color: #272727;
   border: none;
   border-radius: 5px;
-  box-shadow: 0px 0px 10px white;
-  box-shadow: inset 0px -3px 0px white;
+  box-shadow: 0px 0px 10px #d1e8e2;
+  box-shadow: inset 0px -3px 0px #d1e8e2;
 }
 
 .activeSection {
@@ -45,23 +45,23 @@
 
 @keyframes reverseFade {
   from {
-    color: green;
-    text-shadow: 0px 10px purple;
+    color: #ffcb9a;
+    text-shadow: 0px 10px #116466;
   }
   to {
-    color: white;
-    text-shadow: 0px 0px white;
+    color: #d1e8e2;
+    text-shadow: 0px 0px #d1e8e2;
   }
 }
 
 @keyframes fade {
   from {
-    color: white;
-    text-shadow: 0px 0px white;
+    color: #d1e8e2;
+    text-shadow: 0px 0px #d1e8e2;
   }
   to {
-    color: green;
-    text-shadow: 0px 10px purple;
+    color: #ffcb9a;
+    text-shadow: 0px 10px #116466;
   }
 }
 
@@ -92,6 +92,7 @@
   top: 108px;
   position: absolute;
   transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  color: #2c3531;
 }
 
 /* focus is what causes the label to shift positions when the user is ready to type */
@@ -105,6 +106,7 @@
 .userEmail:focus + label {
   top: 68px;
   font-size: 1rem;
+  color: #d1e8e2;
 }
 
 .passwordLabel {
@@ -113,6 +115,7 @@
   top: 206px;
   position: absolute;
   transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  color: #2c3531;
 }
 
 .userPassword:focus {
@@ -124,6 +127,7 @@
 .userPassword:focus + label {
   top: 166px;
   font-size: 1rem;
+  color: #d1e8e2;
 }
 
 /* Styles for signup page */
@@ -159,6 +163,7 @@
   top: 108px;
   position: absolute;
   transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  color: #2c3531;
 }
 .emailSignupLabel {
   padding-top: 10px;
@@ -166,6 +171,7 @@
   top: 206px;
   position: absolute;
   transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  color: #2c3531;
 }
 .passwordSignupLabel {
   padding-top: 10px;
@@ -173,19 +179,23 @@
   top: 304px;
   position: absolute;
   transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  color: #2c3531;
 }
 
 .username:focus + label {
   top: 68px;
   font-size: 1rem;
+  color: #d1e8e2;
 }
 .userSignupEmail:focus + label {
   top: 166px;
   font-size: 1rem;
+  color: #d1e8e2;
 }
 .userSignupPassword:focus + label {
   top: 264px;
   font-size: 1rem;
+  color: #d1e8e2;
 }
 
 /* ALL STATIC LABELS FOR WHEN INPUT IS OCCUPIED */
@@ -197,6 +207,7 @@
   transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
   top: 68px;
   font-size: 1rem;
+  color: #d1e8e2;
 }
 
 .passwordLabelStatic {
@@ -206,6 +217,7 @@
   transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
   top: 166px;
   font-size: 1rem;
+  color: #d1e8e2;
 }
 
 .usernameSignupLabelStatic {
@@ -215,6 +227,7 @@
   transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
   top: 68px;
   font-size: 1rem;
+  color: #d1e8e2;
 }
 
 .emailSignupLabelStatic {
@@ -224,6 +237,7 @@
   transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
   top: 166px;
   font-size: 1rem;
+  color: #d1e8e2;
 }
 
 .passwordSignupLabelStatic {
@@ -233,4 +247,11 @@
   transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
   top: 264px;
   font-size: 1rem;
+  color: #d1e8e2;
+}
+
+/* Button for submitting form */
+tealBg {
+  background-color: #116466;
+  color: #d1e8e2;
 }

@@ -10,6 +10,7 @@ html {
   /* 1 */
   -webkit-text-size-adjust: 100%;
   /* 2 */
+  background-color: #272727;
 }
 
 /* Sections
@@ -1705,5 +1706,4 @@ label form [type="radio"] {
     align-content: center;
   }
   /* Changing yapi logo size */
- 
 }

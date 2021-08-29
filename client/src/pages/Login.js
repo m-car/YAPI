@@ -101,7 +101,7 @@ const Login = (props) => {
                   Password
                 </label>
                 <button
-                  className="btn btn-block btn-primary"
+                  className="btn btn-block tealBg"
                   style={{ cursor: "pointer" }}
                   type="submit"
                 >

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import ReviewForm from "../components/ReviewForm/index";
 import { useParams } from "react-router-dom";
 import { QUERY_API } from "../utils/queries";
