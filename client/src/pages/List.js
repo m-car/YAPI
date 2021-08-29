@@ -55,9 +55,13 @@ import weather from "../assets/images/weather.jpg";
 const List = () => {
   const { userSearch } = useParams();
   console.log(userSearch);
-  const { data } = useQuery(QUERY_SEARCH, {
+  const { loading, data } = useQuery(QUERY_SEARCH, {
     variables: { input: userSearch },
   });
+
+  if (loading) {
+    return <h2>Loading...</h2>;
+  }
 
   return (
     <div>
