@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { ADD_REVIEW } from "../../utils/mutations";
 import Auth from "../../utils/auth";
 import { QUERY_API } from "../../utils/queries";
+import "./reviewForm.css";
 
 const ReviewForm = ({ ReviewId }) => {
   const [commentText, setCommentText] = useState("");
@@ -44,13 +45,13 @@ const ReviewForm = ({ ReviewId }) => {
 
   return (
     <div>
-      <h4>What are your thoughts on this API?</h4>
+      <h4 className="formHeader col-12">What are your thoughts on this API?</h4>
 
       {Auth.loggedIn() ? (
         <>
           <p
             className={`m-0 ${
-              characterCount === 280 || error ? "text-danger" : ""
+              characterCount === 280 || error ? "text-danger pRight" : "pRight"
             }`}
           >
             Character Count: {characterCount}/280
@@ -60,20 +61,25 @@ const ReviewForm = ({ ReviewId }) => {
             className="flex-row justify-center justify-space-between-md align-center"
             onSubmit={handleFormSubmit}
           >
-            <div>stars rating TODO</div>
-            <div className="col-12 col-lg-9">
+            <div className="alwaysLeft">stars rating TODO</div>
+            <div className="col-12">
               <textarea
                 name="commentText"
-                placeholder="Add your comment..."
                 value={commentText}
-                className="form-input w-100"
+                className="textAreaInput"
                 style={{ lineHeight: "1.5", resize: "vertical" }}
                 onChange={handleChange}
               ></textarea>
+              <label
+                htmlFor="commentText"
+                className={commentText ? "commentLabelStatic" : "commentLabel"}
+              >
+                Add your comment...
+              </label>
             </div>
 
             <div className="col-12 col-lg-3">
-              <button className="btn btn-primary btn-block py-3" type="submit">
+              <button className="btn p-2 commentSubmitButton" type="submit">
                 Add Comment
               </button>
             </div>

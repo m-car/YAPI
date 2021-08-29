@@ -1,0 +1,63 @@
+.formHeader {
+  color: #ffcb9a;
+  text-align: left;
+}
+
+.pRight {
+  position: absolute;
+  right: 30px;
+  top: 468px;
+  font-size: medium;
+}
+
+.alwaysLeft {
+  text-align: left;
+  min-width: 90%;
+}
+
+.commentLabel {
+  position: absolute;
+  top: 30px;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  color: #272727;
+}
+
+.textAreaInput {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  color: #1a1a1a;
+  background-color: #ffffff;
+  margin: 2.125rem 0 0.625rem 0;
+  font-size: 1.2rem;
+  border: 1px solid #484848;
+  border-radius: 0.3rem;
+}
+
+.commentLabel:hover,
+.textAreaInput:hover + label {
+  top: -5px;
+  color: #d1e8e2;
+}
+
+.commentLabelStatic {
+  position: absolute;
+  top: -5px;
+  color: #d1e8e2;
+}
+
+.textAreaInput:focus + label {
+  top: -5px;
+  color: #d1e8e2;
+}
+
+.commentSubmitButton {
+  background-color: #d1e8e2;
+  box-shadow: 5px 5px 1px #ffcb9a;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.commentSubmitButton:hover {
+  background-color: #ffcb9a;
+  box-shadow: 0px 0px 3px #ffcb9a;
+}

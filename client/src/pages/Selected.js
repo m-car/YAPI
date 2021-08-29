@@ -3,6 +3,7 @@ import ReviewForm from "../components/ReviewForm/index";
 import { useParams } from "react-router-dom";
 import { QUERY_API } from "../utils/queries";
 import { useQuery } from "@apollo/client";
+import "./selected.css";
 
 const Selected = () => {
   const { apiId } = useParams();
