@@ -81,8 +81,8 @@ const ReviewForm = ({ ReviewId }) => {
             </div>
 
             <div className="col-12 col-lg-3">
-              <button className="btn p-2 commentSubmitButton" type="submit">
-                Add Comment
+              <button className="btn p-2 reviewSubmitButton" type="submit">
+                Add Review
               </button>
             </div>
           </form>

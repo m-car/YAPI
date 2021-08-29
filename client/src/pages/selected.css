@@ -16,9 +16,13 @@ th {
 }
 
 td {
-  padding-left: 10px;
+  padding: 0px 10px;
 }
 
-tr:nth-child(odd) td {
+tr:nth-child(even) td {
   background-color: #116466;
+}
+
+.noReviews {
+  font-size: large;
 }

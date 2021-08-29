@@ -44,13 +44,13 @@
   color: #d1e8e2;
 }
 
-.commentSubmitButton {
+.reviewSubmitButton {
   background-color: #d1e8e2;
   box-shadow: 5px 5px 1px #ffcb9a;
   transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.commentSubmitButton:hover {
+.reviewSubmitButton:hover {
   background-color: #ffcb9a;
   box-shadow: 0px 0px 3px #ffcb9a;
 }

@@ -5,6 +5,7 @@ import { QUERY_API } from "../utils/queries";
 import { useQuery } from "@apollo/client";
 import "./selected.css";
 import { FaQuestionCircle } from "react-icons/fa";
+import Auth from "../utils/auth";
 
 const Selected = () => {
   const { apiId } = useParams();
@@ -31,6 +32,20 @@ const Selected = () => {
     return <h3>loading reviews...</h3>;
   }
 
+  const checkReviews = () => {
+    let result = false;
+    reviews.forEach((val) => {
+      console.log(val.username);
+      console.log(Auth.getProfile().data.username);
+      if (val.username === Auth.getProfile().data.username) {
+        result = true;
+      }
+    });
+    return result;
+  };
+
+  console.log(checkReviews());
+
   return (
     <main className="flex-row justify-center  mb-4">
       <div className="col-12 col-lg-10">
@@ -39,9 +54,14 @@ const Selected = () => {
         {selectedAPI.map((api) => (
           <div key={api.url} className="card">
             <h1 className="darkBg p-2">
-              {api.title} <span>{api.rating}⭐</span>
+              {api.title}{" "}
+              {api.rating === -1 ? (
+                <span className="noReviews">💔No reviews</span>
+              ) : (
+                <span>{api.rating}⭐</span>
+              )}
             </h1>
-            <div className="card-body">
+            <div className="card-body px-4">
               <h2>{api.description}</h2>
               <table className="selectedTable">
                 <tr>
@@ -82,7 +102,11 @@ const Selected = () => {
         ))}
 
         {/* Review box add context if user is not logged in cant leave review*/}
-        <ReviewForm />
+        {checkReviews() ? (
+          <h2>Thank you for leaving a review!</h2>
+        ) : (
+          <ReviewForm />
+        )}
 
         {/* Reviews list */}
         <br></br>
