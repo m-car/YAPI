@@ -1,5 +1,6 @@
 import React from "react";
 import ReviewForm from "../components/ReviewForm/index";
+import Rater from "../components/Star-Rater";
 import { useParams } from "react-router-dom";
 import { QUERY_API } from "../utils/queries";
 import { useQuery } from "@apollo/client";
