@@ -44,6 +44,9 @@ const Home = () => {
       <section className="hero">
         <header className="hero-header">
           <h1 className="hero-title">YAPI</h1>
+          <h4 className="hero-description">
+            Crowd-sourced reviews on the API's we use.
+          </h4>
         </header>
         <footer className="hero-footer">
           <div className="search">
@@ -71,12 +74,12 @@ const Home = () => {
           <p className="sans summary justify">
             We have all spent too many hours scowering the web for a not so
             great API that ends up not working out in the end. Back to square
-            one, looking for an API, but this time don't waste your precious
-            time. Alot of developers can relate, so they come to YAPI to leave a
-            review on their experience with an API. You don't have to test all
-            API's to see if they are compatible with your project, the users of
-            YAPI fix that problem. Look up any API and find out what other
-            developers think of it. Or maybe you've used an API that enNameded
+            one again, looking for an API, but this time don't waste your
+            precious time. Alot of developers can relate, so they come to YAPI
+            to leave a review on their experience with an API. You don't have to
+            test all API's to see if they are compatible with your project, the
+            users of YAPI fix that problem. Look up any API and find out what
+            other developers think of it. Or maybe you've used an API that ended
             up not giving you the result you wanted, let other users know by
             leaving a review.
           </p>
@@ -90,10 +93,17 @@ const Home = () => {
         <div className="line-left summary span-fourth sans">
           <p>
             Vivi Cowan:
-            <br /> "A cool person"
-            <br /> <FaGithub /> :
-            <br /> <FaLinkedin /> :
-            <br /> <FaYelp /> :
+            <br /> "Versatile Vivi, with glasses"
+            <br /> <FaGithub /> :{" "}
+            <a href="https://github.com/vivicowan">Github</a>
+            <br /> <FaLinkedin /> :{" "}
+            <a href="https://www.linkedin.com/in/vivianna-cowan-400b061a6/">
+              Linked In
+            </a>
+            <br /> <FaYelp /> :{" "}
+            <a href="https://www.yelp.com/user_details?userid=op0RGG8Te6GD5vUItQiQmQ">
+              Yelp
+            </a>
           </p>
         </div>
         <div className="line-left span-fourth summary sans">
