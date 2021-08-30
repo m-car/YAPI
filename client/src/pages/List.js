@@ -4,6 +4,7 @@ import "./list.css";
 import { useQuery } from "@apollo/client";
 import { QUERY_SEARCH } from "../utils/queries";
 import { useParams } from "react-router-dom";
+import { AiOutlineStar } from "react-icons/ai";
 
 import animals from "../assets/images/animals.png";
 import anime from "../assets/images/anime.jpg";
@@ -78,7 +79,7 @@ function getRating(data) {
   if (data.rating === -1) {
     return "This API has no reviews yet.";
   } else {
-    return data.rating;
+    return `${data.rating}`;
   }
 }
 
@@ -328,7 +329,12 @@ function ApiCard({ api }) {
     <div className="searchResult">
       <div className="searchDescription">
         <h3 className="cardTitle">{api.title}</h3>
-        <p className="cardRating">⭐{getRating(api)}</p>
+        <p className="cardRating">
+          <span className="ratingStarColor">
+            <AiOutlineStar />
+          </span>
+          {getRating(api)}
+        </p>
         <h5 className="cardCategory">{api.category}</h5>
         <p className="cardDescription">{api.description}</p>
         <button

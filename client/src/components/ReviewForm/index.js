@@ -6,6 +6,7 @@ import { FaStar } from "react-icons/fa";
 import { ADD_REVIEW } from "../../utils/mutations";
 import Auth from "../../utils/auth";
 import { QUERY_API } from "../../utils/queries";
+import "./reviewForm.css";
 
 const colors = {
   orange: "#FFBA5A",
@@ -76,7 +77,7 @@ const ReviewForm = ({ ReviewId }) => {
 
   return (
     <div>
-      <h4>What are your thoughts on this API?</h4>
+      <h4 className="formHeader col-12">What are your thoughts on this API?</h4>
 
       {Auth.loggedIn() ? (
         <>
@@ -84,7 +85,7 @@ const ReviewForm = ({ ReviewId }) => {
             className="flex-row justify-center justify-space-between-md align-center"
             onSubmit={handleFormSubmit}
           >
-            <div style={styles.container}>
+            <div className="alwaysLeft col-12" style={styles.container}>
               <div style={styles.stars}>
                 {stars.map((_, index) => {
                   return (
@@ -110,26 +111,33 @@ const ReviewForm = ({ ReviewId }) => {
             </div>
             <p
               className={`m-0 ${
-                characterCount === 280 || error ? "text-danger" : ""
+                characterCount === 280 || error
+                  ? "text-danger alwaysLeft col-12"
+                  : "alwaysLeft col-12"
               }`}
             >
               Character Count: {characterCount}/280
               {error && <span className="ml-2">{error.message}</span>}
             </p>
-            <div className="col-12 col-lg-9">
+            <div className="col-12">
               <textarea
                 name="commentText"
-                placeholder="Add your comment..."
                 value={commentText}
-                className="form-input w-100"
+                className="textAreaInput"
                 style={{ lineHeight: "1.5", resize: "vertical" }}
                 onChange={handleChange}
               ></textarea>
+              <label
+                htmlFor="commentText"
+                className={commentText ? "commentLabelStatic" : "commentLabel"}
+              >
+                Add your comment...
+              </label>
             </div>
 
             <div className="col-12 col-lg-3">
-              <button className="btn btn-primary btn-block py-3" type="submit">
-                Add Comment
+              <button className="btn p-2 reviewSubmitButton" type="submit">
+                Add Review
               </button>
             </div>
           </form>
