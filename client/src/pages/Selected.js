@@ -78,7 +78,7 @@ const Selected = () => {
               ) : (
                 <span>
                   {api.rating}
-                  <Rater total={5} rating={avgRating} />
+                  <Rater total={5} rating={avgRating} interactive={false} />
                   <span className="ratingStarColor">
 
                   </span>
@@ -146,7 +146,7 @@ const Selected = () => {
                 <span className="ratingNumber">
 
                   <span className="ratingStarColor">
-                    <Rater total={5} rating={rev.rating} />
+                    <Rater total={5} rating={rev.rating} interactive={false} />
                   </span>
                 </span>{" "}
                 <span className="smallDate">
