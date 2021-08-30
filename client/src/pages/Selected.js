@@ -6,10 +6,13 @@ import { useParams } from "react-router-dom";
 import { QUERY_API } from "../utils/queries";
 import { useQuery } from "@apollo/client";
 import "./selected.css";
+import "./react-rater.scss";
 import { FaQuestionCircle } from "react-icons/fa";
 
 import Auth from "../utils/auth";
-import { getArgumentValues } from "graphql/execution/values";
+
+
+
 
 const Selected = () => {
   const { apiId } = useParams();
@@ -78,8 +81,10 @@ const Selected = () => {
               ) : (
                 <span>
                   <Rater total={5} rating={avgRating} interactive={false} />
+
                   {api.rating}
                   <span className="ratingStarColor"></span>
+
                 </span>
               )}
             </h1>
