@@ -61,9 +61,7 @@ const Selected = () => {
           {reviews?.map((rev) => (
             <div key={rev._id} className="card-body">
               <h2>{rev.username}</h2>
-              <p>
-                <Rater>{rev.rating}</Rater>
-              </p>
+              <p>{rev.rating}</p>
               <p>{rev.comment}</p>
             </div>
           ))}
