@@ -124,10 +124,14 @@ const Home = () => {
         <div className="line-left span-fourth summary sans">
           <p>
             Marko Caric:
-            <br /> "A cool person"
-            <br /> <FaGithub /> :
-            <br /> <FaLinkedin /> :
-            <br /> <FaYelp /> :
+            <br /> "Mega Mind Marko"
+            <br /> <FaGithub /> : <a href="https://github.com/m-car">Github</a>
+            <br /> <FaLinkedin /> :{" "}
+            <a href="https://www.linkedin.com/in/markocaric">Linked In</a>
+            <br /> <FaYelp /> :{" "}
+            <a href="https://www.yelp.com/user_details?userid=sxgaZCKsl_vagbtfBQ-nGA">
+              Yelp
+            </a>
           </p>
         </div>
       </section>
