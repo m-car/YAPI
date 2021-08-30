@@ -1,7 +1,7 @@
 import React from "react";
 import ReviewForm from "../components/ReviewForm/index";
-import Rater from 'react-rater'
-import 'react-rater/lib/react-rater.css'
+import Rater from "react-rater";
+import "react-rater/lib/react-rater.css";
 import { useParams } from "react-router-dom";
 import { QUERY_API } from "../utils/queries";
 import { useQuery } from "@apollo/client";
@@ -23,7 +23,7 @@ const Selected = () => {
   });
   const reviews = data?.getApi.reviews;
 
-  //average rating 
+  //average rating
   // console.log(reviews)
   // console.log("rating:" + reviews[0].rating)
   // console.log("Total Reviews: " + reviews.length)
@@ -80,12 +80,11 @@ const Selected = () => {
                 <span className="noReviews">💔No reviews</span>
               ) : (
                 <span>
-                  {api.rating}
                   <Rater total={5} rating={avgRating} interactive={false} />
 
-                  <span className="ratingStarColor">
+                  {api.rating}
+                  <span className="ratingStarColor"></span>
 
-                  </span>
                 </span>
               )}
             </h1>
@@ -148,7 +147,6 @@ const Selected = () => {
               <h2 className="reviewHeader">
                 {rev.username}{" "}
                 <span className="ratingNumber">
-
                   <span className="ratingStarColor">
                     <Rater total={5} rating={rev.rating} interactive={false} />
                   </span>
