@@ -1,13 +1,15 @@
 import React from "react";
 import ReviewForm from "../components/ReviewForm/index";
-import Rater from "../components/Star-Rater";
+import Rater from 'react-rater'
+import 'react-rater/lib/react-rater.css'
 import { useParams } from "react-router-dom";
 import { QUERY_API } from "../utils/queries";
 import { useQuery } from "@apollo/client";
 import "./selected.css";
 import { FaQuestionCircle } from "react-icons/fa";
-import { AiOutlineStar } from "react-icons/ai";
+
 import Auth from "../utils/auth";
+import { getArgumentValues } from "graphql/execution/values";
 
 const Selected = () => {
   const { apiId } = useParams();
@@ -18,6 +20,19 @@ const Selected = () => {
   });
   const reviews = data?.getApi.reviews;
 
+  //average rating 
+  // console.log(reviews)
+  // console.log("rating:" + reviews[0].rating)
+  // console.log("Total Reviews: " + reviews.length)
+  let sumRating = 0;
+  let avgRating;
+  for (var i = 0; i < reviews?.length; i++) {
+    // console.log("rating:" + reviews[i].rating)
+    sumRating = sumRating + reviews[i].rating;
+    // console.log("Rating Sum is: " + sumRating)
+    avgRating = sumRating / reviews.length;
+    // console.log("the average rating is:" + avgRating)
+  }
   const selectedAPI = [
     {
       title: data?.getApi.title,
@@ -36,7 +51,7 @@ const Selected = () => {
 
   const checkReviews = () => {
     let result = false;
-    console.log(Auth.loggedIn());
+    // console.log(Auth.loggedIn());
     if (Auth.loggedIn()) {
       reviews.forEach((val) => {
         if (val.username === Auth.getProfile().data.username) {
@@ -47,7 +62,7 @@ const Selected = () => {
     return result;
   };
 
-  console.log(checkReviews());
+  // console.log(checkReviews());
 
   return (
     <main className="flex-row justify-center  mb-4">
@@ -63,8 +78,9 @@ const Selected = () => {
               ) : (
                 <span>
                   {api.rating}
+                  <Rater total={5} rating={avgRating} interactive={false} />
                   <span className="ratingStarColor">
-                    <AiOutlineStar />
+
                   </span>
                 </span>
               )}
@@ -128,9 +144,9 @@ const Selected = () => {
               <h2 className="reviewHeader">
                 {rev.username}{" "}
                 <span className="ratingNumber">
-                  {rev.rating}
+
                   <span className="ratingStarColor">
-                    <AiOutlineStar />
+                    <Rater total={5} rating={rev.rating} interactive={false} />
                   </span>
                 </span>{" "}
                 <span className="smallDate">
