@@ -103,7 +103,9 @@ const Selected = () => {
                   <td>{api.cors}</td>
                 </tr>
               </table>
-              <a href={api.url}>Link to Site</a>
+              <p>
+                Visit {api.title} by <a href={api.url}>clicking here</a>
+              </p>
             </div>
           </div>
         ))}
