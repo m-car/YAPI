@@ -20,9 +20,6 @@ const Header = () => {
       <div>
         {Auth.loggedIn() ? (
           <>
-            <Link className="btn btn-lg btn-info m-2" to="/select">
-              {Auth.getProfile().data.username}'s SELECTED API
-            </Link>
             <button className="btn btn-lg mintBg m-2" onClick={logout}>
               Logout
             </button>
