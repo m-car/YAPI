@@ -29,7 +29,7 @@ TABLE OF CONTENTS   `ʕノ•ᴥ•ʔノ ︵ ┻━┻`
 INTRODUCTION   `(｡^‿^｡)`
 ------------
 
-**YAPI** is an API reviewing app, it allows users to search and find different api’s. In this app, user’s can go through the comments and ratings of previous users to make a decifer an opinion of their own about an API. Users are able to search API’s by their name or category. When finding an individual API, the average rating is displayed as well as the description. At the selected API, a user can leave a review with a comment and rating for other user’s to see.
+**YAPI** is an API reviewing app, it allows users to search and find different api’s. In this app, user’s can go through the comments and ratings of previous users to make an opinion of their own about an API. Users are able to search API’s by their name or category. When finding an individual API, the average rating is displayed as well as the description. At the selected API, a user can leave a review with a comment and rating for other user’s to see.
 
 **CLICK THE LOGO TO EXPLORE OUR DEPLOYED APP**  
 <a href="https://yapi-app.herokuapp.com/"><img alt="YAPI_APP" src="./client/src/assets/images/logo.png" ></a>
