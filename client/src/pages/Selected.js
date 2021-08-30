@@ -1,6 +1,7 @@
 import React from "react";
 import ReviewForm from "../components/ReviewForm/index";
-import Rater from "../components/Star-Rater";
+import Rater from 'react-rater'
+import 'react-rater/lib/react-rater.css'
 import { useParams } from "react-router-dom";
 import { QUERY_API } from "../utils/queries";
 import { useQuery } from "@apollo/client";
@@ -40,7 +41,7 @@ const Selected = () => {
             <div className="card-body">
               <h2>Category: {api.category}</h2>
               <p>Rating : 5 </p>
-
+              <Rater total={5} rating={2} />
               <a href={api.url}>Link to Site</a>
               <p>Https: {api.https}</p>
               <p>Auth Type: {api.auth}</p>
@@ -61,8 +62,10 @@ const Selected = () => {
           {reviews?.map((rev) => (
             <div key={rev._id} className="card-body">
               <h2>{rev.username}</h2>
-              <p>{rev.rating}</p>
+              {/* <p>{rev.rating}</p> */}
+              <Rater total={5} rating={rev.rating} />
               <p>{rev.comment}</p>
+
             </div>
           ))}
         </div>
