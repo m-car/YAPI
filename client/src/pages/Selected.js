@@ -7,7 +7,7 @@ import { QUERY_API } from "../utils/queries";
 import { useQuery } from "@apollo/client";
 import "./selected.css";
 import { FaQuestionCircle } from "react-icons/fa";
-import { AiOutlineStar } from "react-icons/ai";
+
 import Auth from "../utils/auth";
 import { getArgumentValues } from "graphql/execution/values";
 
@@ -20,6 +20,19 @@ const Selected = () => {
   });
   const reviews = data?.getApi.reviews;
 
+  //average rating 
+  // console.log(reviews)
+  // console.log("rating:" + reviews[0].rating)
+  // console.log("Total Reviews: " + reviews.length)
+  let sumRating = 0;
+  let avgRating;
+  for (var i = 0; i < reviews?.length; i++) {
+    // console.log("rating:" + reviews[i].rating)
+    sumRating = sumRating + reviews[i].rating;
+    // console.log("Rating Sum is: " + sumRating)
+    avgRating = sumRating / reviews.length;
+    // console.log("the average rating is:" + avgRating)
+  }
   const selectedAPI = [
     {
       title: data?.getApi.title,
@@ -38,7 +51,7 @@ const Selected = () => {
 
   const checkReviews = () => {
     let result = false;
-    console.log(Auth.loggedIn());
+    // console.log(Auth.loggedIn());
     if (Auth.loggedIn()) {
       reviews.forEach((val) => {
         if (val.username === Auth.getProfile().data.username) {
@@ -49,7 +62,7 @@ const Selected = () => {
     return result;
   };
 
-  console.log(checkReviews());
+  // console.log(checkReviews());
 
   return (
     <main className="flex-row justify-center  mb-4">
@@ -65,6 +78,7 @@ const Selected = () => {
               ) : (
                 <span>
                   {api.rating}
+                  <Rater total={5} rating={avgRating} />
                   <span className="ratingStarColor">
 
                   </span>
