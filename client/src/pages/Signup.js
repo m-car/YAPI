@@ -42,6 +42,7 @@ const Signup = () => {
   const loginClickHandler = (e) => {
     window.location = "/login";
   };
+  // /made some changes
 
   return (
     <main className="flex-row justify-center mb-4">
